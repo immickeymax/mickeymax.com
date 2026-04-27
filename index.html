@@ -1,20 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Mickey Max — Business Services</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MickeyMax | Book Your Appointment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #080909; font-family: 'DM Sans', sans-serif; color: #e8e4dc; }
+        .serif { font-family: 'Cormorant Garamond', serif; }
+        .gold-text { color: #d4a017; }
+        .gold-bg { background-color: #d4a017; }
+        input, select, textarea { 
+            background: rgba(255,255,255,0.05) !important; 
+            border: 1px solid rgba(212, 160, 23, 0.2) !important;
+            color: white !important;
+        }
+        .btn-shimmer:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 160, 23, 0.2); transition: all 0.3s; }
+    </style>
 </head>
-<body>
-  <h1>Mickey Max</h1>
-  <p>We offer creative consulting, digital services, and promotional content creation for businesses and influencers.</p>
+<body class="antialiased">
 
-  <h3>Contact</h3>
-  <p>Email: contact@mickeymax.com</p>
+    <nav class="sticky top-0 z-50 bg-[#080909]/90 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
+        <h1 class="serif text-2xl gold-text tracking-widest uppercase">MickeyMax</h1>
+        <div class="text-xs uppercase tracking-widest text-white/60">
+            <a href="mailto:schoppman@gmail.com" class="hover:text-[#d4a017]">Contact</a>
+        </div>
+    </nav>
 
-  <h3>Policies</h3>
-  <ul>
-    <li><strong>Refund Policy:</strong> 7-day satisfaction guarantee on digital services.</li>
-    <li><strong>Cancellation Policy:</strong> Cancellations accepted within 24 hours of booking.</li>
-    <li><strong>Terms of Service:</strong> All services require upfront payment and client content cooperation.</li>
-  </ul>
+    <section class="py-20 px-6 text-center">
+        <p class="gold-text text-xs uppercase tracking-[0.3em] mb-4">Established 2022</p>
+        <h2 class="serif text-5xl md:text-7xl mb-6 leading-tight text-white">Book Your Appointment</h2>
+        <p class="text-white/50 text-lg mb-10 max-w-xl mx-auto">Luxury strategy and VIP consultations tailored for your success.</p>
+        <a href="#appointment" class="gold-bg text-black px-10 py-4 font-bold rounded-sm uppercase tracking-widest text-xs btn-shimmer inline-block">Schedule Appointment</a>
+    </section>
+
+    <section id="appointment" class="py-16 px-6 bg-white/[0.02]">
+        <div class="max-w-xl mx-auto border border-white/10 p-8 rounded-lg shadow-2xl">
+            <h3 class="serif text-3xl mb-8 text-center text-white">Appointment Details</h3>
+            
+            <form action="https://formspree.io/f/maqagqro" method="POST" class="space-y-6">
+                <div>
+                    <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">Full Name</label>
+                    <input type="text" name="name" required class="w-full p-4 rounded bg-transparent focus:outline-none focus:border-[#d4a017]">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">Date</label>
+                        <input type="date" name="date" required class="w-full p-4 rounded bg-transparent focus:outline-none focus:border-[#d4a017]">
+                    </div>
+                    <div>
+                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">Preferred Time</label>
+                        <input type="time" name="time" required class="w-full p-4 rounded bg-transparent focus:outline-none focus:border-[#d4a017]">
+                    </div>
+                </div>
+                <div>
+                    <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">Service Type</label>
+                    <select name="service" class="w-full p-4 rounded bg-transparent focus:outline-none focus:border-[#d4a017]">
+                        <option>VIP Consultation</option>
+                        <option>Strategy Session</option>
+                        <option>Private Meeting</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">Reason for Appointment</label>
+                    <textarea name="reason" rows="4" required class="w-full p-4 rounded bg-transparent focus:outline-none focus:border-[#d4a017]"></textarea>
+                </div>
+                <button type="submit" class="w-full gold-bg text-black py-5 font-bold uppercase tracking-[0.2em] text-xs btn-shimmer rounded-sm">Confirm Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/10 text-center">
+        <p class="text-[10px] uppercase tracking-[0.4em] text-white/20">&copy; 2026 MickeyMax. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
