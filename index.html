@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Mickey Max | Strategic Security Group</title>
+    <title>Mickey Max | High-Tier Strategic Operations</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --paper: #ffffff; --ink: #000000; --gold: #C5A059; --olive: #556b2f; --text-main: #1a1a1a; 
+            --paper: #ffffff; --ink: #000000; --gold: #C5A059; --olive: #556b2f; --text-main: #000000; 
         }
         body { 
             background-color: var(--paper); color: var(--text-main); 
@@ -18,39 +17,36 @@
         }
         .nav-fixed { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 3px solid #000; }
         
-        /* THE FIX: Fixed Height & Wide Width ensures words like "Operational" don't cut off or jump */
-        .header-type-wrap {
-            display: block;
-            height: 1.2em; /* Keeps the line height stable */
-            width: 100%;   /* Allows long words to fit */
-            overflow: hidden;
-            line-height: 1;
+        /* Typography fix for high-impact headlines */
+        .headline-main {
+            line-height: 0.85;
+            letter-spacing: -0.04em;
         }
 
-        /* Visible Form Inputs */
+        /* Form Visibility - Heavy Black Borders */
         input, textarea {
-            background-color: #f4f4f4 !important; 
+            background-color: #f8f8f8 !important; 
             border: 2px solid #000 !important; 
             border-radius: 0px !important;
-            padding: 1rem !important;
+            padding: 1.25rem !important;
             font-size: 16px !important;
             width: 100%; margin-top: 8px;
             color: #000 !important;
         }
-        label { font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 1.5px; display: block; }
+        label { font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; display: block; color: #000; }
 
         .tag-tactical {
-            background: var(--olive); color: white; padding: 4px 10px;
+            background: var(--ink); color: white; padding: 4px 12px;
             font-size: 10px; font-weight: 700; text-transform: uppercase;
         }
 
-        .hero-frame { border: 4px solid #000; height: 320px; overflow: hidden; position: relative; }
+        .hero-frame { border: 4px solid #000; height: 350px; overflow: hidden; position: relative; }
         .hero-frame img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* iPhone Safari Padding */
+        /* Safari iPhone adjustment */
         footer { padding-bottom: calc(4rem + env(safe-area-inset-bottom)); }
-        
-        .typed-cursor { opacity: 0; } 
+
+        .gold-underline { border-bottom: 4px solid var(--gold); }
     </style>
 </head>
 <body class="pt-24">
@@ -59,81 +55,96 @@
         <div class="max-w-screen-md mx-auto px-6 h-20 flex items-center justify-between">
             <div class="font-bold uppercase text-xl border-l-4 border-black pl-3">Mickey <span class="text-[#C5A059]">Max</span></div>
             <div class="flex items-center space-x-4">
-                <a href="#intel" class="text-[11px] font-black uppercase text-black">Intel</a>
-                <a href="#briefing" class="bg-black text-white text-[11px] font-bold px-4 py-2">Briefing</a>
+                <a href="#intel" class="text-[11px] font-black uppercase text-black">Capabilities</a>
+                <a href="#briefing" class="bg-black text-white text-[11px] font-bold px-4 py-2 uppercase tracking-widest">Briefing</a>
             </div>
         </div>
     </nav>
 
     <main class="max-w-screen-md mx-auto px-6 sm:px-8">
         
-        <section class="pt-8">
-            <h2 class="text-6xl md:text-8xl font-bold leading-[0.85] mb-8 uppercase tracking-tighter">
-                Strategic <br>
-                <div class="header-type-wrap text-zinc-400">
-                    <span id="sliding-words"></span>
-                </div>
+        <section class="pt-8 mb-12">
+            <p class="text-[11px] font-bold tracking-[0.4em] text-[#C5A059] uppercase mb-4">Establishing The Standard</p>
+            <h2 class="text-7xl md:text-9xl font-bold headline-main uppercase mb-10">
+                Absolute <br>
+                <span class="text-zinc-300">Authority.</span>
             </h2>
             <div class="hero-frame">
-                <img src="images/hero.jpg" alt="Mickey Max Operational Detail">
+                <img src="images/hero.jpg" alt="Mickey Max Strategic Asset">
             </div>
         </section>
 
-        <section class="py-10 border-b-2 border-zinc-100">
-            <p class="text-[11px] font-black tracking-[0.3em] text-[#8a6d3b] uppercase mb-6">Operational Narrative</p>
-            <div class="space-y-6 text-xl md:text-2xl font-light leading-relaxed text-zinc-900">
-                <p>Following the standards of Tier 1 defense firms like <span class="italic text-zinc-500">Triple Canopy</span>, <span class="font-bold">Mickey Max</span> provides elite protection for federal, state, and municipal assets.</p>
+        <section class="py-12 border-b-2 border-zinc-100">
+            <div class="space-y-8 text-2xl md:text-3xl font-light leading-tight text-black">
+                <p>
+                    Conventional security firms operate on scripts. <span class="font-bold gold-underline">Mickey Max</span> operates on results. 
+                </p>
+                <p>
+                    We have moved beyond the outdated models of previous industry giants to define a new echelon of <span class="font-bold">Strategic Operational Excellence</span>. We provide federal, state, and municipal entities with a level of tactical precision and logistical hardening that is simply unmatched in the private sector.
+                </p>
+                <p class="text-lg md:text-xl text-zinc-600 font-medium leading-relaxed">
+                    From high-value asset transit to complex convoy protection and specialized law enforcement instruction, we don't just secure—we dominate the operational environment. 
+                </p>
             </div>
         </section>
 
         <section id="intel" class="py-16">
-            <p class="text-[11px] font-black tracking-[0.3em] text-[#8a6d3b] uppercase mb-10">01 // Field Capabilities</p>
-            <div class="grid grid-cols-1 gap-6">
-                <div class="p-6 border-2 border-black border-l-[12px] border-l-[#556b2f] bg-white">
+            <p class="text-[11px] font-black tracking-[0.4em] text-[#8a6d3b] uppercase mb-10">Tier 1 Field Capabilities</p>
+            <div class="grid grid-cols-1 gap-8">
+                <div class="p-8 border-2 border-black border-l-[16px] border-l-[#556b2f] bg-white">
                     <span class="tag-tactical">Instruction</span>
-                    <h3 class="text-2xl font-bold uppercase mt-4 mb-3">Tactical Training</h3>
-                    <div class="h-40 bg-zinc-100 overflow-hidden border border-zinc-200">
+                    <h3 class="text-3xl font-bold uppercase mt-4 mb-4">Advanced Tactical Training</h3>
+                    <p class="text-sm text-zinc-700 mb-6 font-medium leading-relaxed">Sophisticated instructional blocks designed for modern law enforcement and specialized military units. We set the bar for asymmetrical threat response.</p>
+                    <div class="h-48 bg-zinc-100 overflow-hidden border border-black">
                         <img src="images/instruction.jpg" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="p-8 border-2 border-black border-l-[16px] border-l-black bg-white">
+                    <span class="tag-tactical">Hardening</span>
+                    <h3 class="text-3xl font-bold uppercase mt-4 mb-4">Operational Logistics</h3>
+                    <p class="text-sm text-zinc-700 mb-6 font-medium leading-relaxed">High-threat convoy protection and the secure transfer of critical assets. Our logistics are built on zero-fail protocols and total route dominance.</p>
+                    <div class="h-48 bg-zinc-100 overflow-hidden border border-black">
+                        <img src="images/logistics.jpg" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="briefing" class="py-20 border-t-[6px] border-black">
-            <h3 class="text-6xl font-bold uppercase tracking-tighter text-black">Briefing</h3>
-            <form action="https://formspree.io/f/maqagqro" method="POST" class="space-y-8">
-                <div><label>Full Identity / Rank</label><input type="text" name="name" required placeholder="Name or Rank"></div>
-                <div><label>Official Email</label><input type="email" name="email" required placeholder="Contact Email"></div>
-                <div><label>Operational Objective</label><textarea name="message" rows="5" required placeholder="Describe the briefing requirement..."></textarea></div>
-                <button type="submit" class="bg-black text-white p-6 font-bold uppercase tracking-[0.5em] text-xs w-full active:bg-[#C5A059]">Transmit Briefing Request</button>
+        <section id="briefing" class="py-24 border-t-[8px] border-black">
+            <div class="mb-16">
+                <h3 class="text-6xl font-bold uppercase tracking-tighter text-black">Briefing</h3>
+                <p class="text-[11px] font-bold tracking-[0.4em] text-zinc-500 mt-2 uppercase">Direct Engagement Intake</p>
+            </div>
+            
+            <form action="https://formspree.io/f/maqagqro" method="POST" class="space-y-10">
+                <div>
+                    <label>Full Identity / Rank</label>
+                    <input type="text" name="name" required placeholder="OFFICIAL NAME">
+                </div>
+                <div>
+                    <label>Official Email</label>
+                    <input type="email" name="email" required placeholder="CONTACT@AGENCY.GOV">
+                </div>
+                <div>
+                    <label>Operational Objective</label>
+                    <textarea name="message" rows="6" required placeholder="DESCRIBE TACTICAL REQUIREMENT..."></textarea>
+                </div>
+                <button type="submit" class="bg-black text-white p-8 font-bold uppercase tracking-[0.5em] text-sm w-full active:bg-[#C5A059] transition-all">
+                    Transmit Briefing Request
+                </button>
             </form>
         </section>
 
     </main>
 
-    <footer class="py-20 border-t-2 border-black bg-white text-center">
-        <div class="logo-bureau border-none mb-4 font-bold uppercase text-xl">Mickey <span class="text-[#C5A059]">Max</span></div>
-        <p class="text-[9px] text-zinc-500 font-bold uppercase tracking-widest leading-loose">
-            &copy; 2026 Mickey Max Strategic Security Group.
+    <footer class="py-24 border-t-2 border-black bg-white text-center">
+        <div class="font-bold uppercase text-2xl mb-6 border-none">Mickey <span class="text-[#C5A059]">Max</span></div>
+        <p class="text-[10px] text-zinc-500 font-bold uppercase tracking-[0.5em] leading-loose">
+            &copy; 2026 Mickey Max Strategic Security Group. <br>
+            Definitive • Elite • Absolute
         </p>
     </footer>
-
-    <script>
-        var options = {
-            strings: [
-                'Consultancy.',
-                'Tactical Protection.',
-                'Strategical Training.',
-                'Operational Security.'
-            ],
-            typeSpeed: 60,
-            backSpeed: 30,
-            backDelay: 4000,
-            loop: true,
-            showCursor: false
-        };
-        var typed = new Typed('#sliding-words', options);
-    </script>
 
 </body>
 </html>
