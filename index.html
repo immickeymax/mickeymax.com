@@ -5,66 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Mickey Max | Strategic Security Group</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --paper: #ffffff; --ink: #000000; --gold: #C5A059; --border: rgba(0,0,0,0.1); }
-        body { background-color: var(--paper); color: var(--ink); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        :root { 
+            --bureau-white: #ffffff; 
+            --bureau-black: #000000; 
+            --tactical-gold: #C5A059;
+            --rule-line: rgba(0,0,0,0.15);
+        }
         
-        /* Square Linear Branding Styling */
+        body { 
+            background-color: var(--bureau-white); 
+            color: var(--bureau-black); 
+            font-family: 'Space Grotesk', sans-serif; 
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: -0.02em;
+        }
+
+        /* Solid Linear Branding */
         .logo-bureau {
-            font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: -0.01em;
-            font-size: 1.4rem;
+            letter-spacing: 0.1em;
+            font-size: 1.25rem;
             line-height: 1;
-            display: inline-flex;
-            align-items: center;
+            border-left: 3px solid var(--bureau-black);
+            padding-left: 12px;
         }
-        .logo-bureau span { color: var(--gold); margin-left: 6px; }
 
-        .header-sticky { 
-            background: rgba(255, 255, 255, 0.95); 
-            backdrop-filter: blur(20px); 
-            border-bottom: 2px solid var(--ink); 
+        .nav-fixed {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--bureau-black);
         }
 
         /* Bento Grid Components */
-        .bento-card { 
-            background: #ffffff; 
-            border: 2px solid var(--ink); 
-            padding: 30px; 
-            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        .bento-box {
+            border: 2px solid var(--bureau-black);
+            padding: 2rem;
+            background: #fff;
+            transition: all 0.3s ease;
         }
-        .bento-card:hover { border-color: var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .bento-box:hover { border-color: var(--tactical-gold); }
 
-        /* Widget Zone Framing */
-        .widget-frame { background: #f8f8f8; border: 1px dashed #ccc; min-height: 350px; display: flex; align-items: center; justify-content: center; }
-
-        /* Form Styling: Bureau Standard */
+        /* Unified Form Styling */
         input, select, textarea {
-            background: #fcfcfc !important; border: 1.5px solid #eee !important; border-radius: 0px !important;
-            padding: 1.25rem !important; font-size: 17px !important; color: #000 !important; width: 100%;
+            background: #f9f9f9 !important;
+            border: 1.5px solid var(--rule-line) !important;
+            border-radius: 0px !important;
+            padding: 1.25rem !important;
+            font-size: 17px !important; /* Safari Auto-Zoom Fix */
+            color: #000 !important;
+            width: 100%;
+            font-family: 'Space Grotesk', sans-serif;
         }
-        input:focus { border-color: var(--gold) !important; outline: none; background: #fff !important; }
-        label { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px; display: block; }
-        
-        .btn-bureau { background: #000; color: #fff; padding: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3em; font-size: 12px; width: 100%; cursor: pointer; border: none; }
-        .btn-bureau:active { background: var(--gold); transform: translateY(1px); }
+        input:focus { border-color: var(--bureau-black) !important; outline: none; background: #fff !important; }
+        label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 8px; display: block; }
 
-        .asset-utilization { filter: grayscale(100%) contrast(1.1); transition: filter 0.5s ease; border: 1px solid rgba(0,0,0,0.05); }
-        .asset-utilization:hover { filter: grayscale(0%); }
+        .btn-command {
+            background-color: var(--bureau-black);
+            color: #fff;
+            padding: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            font-size: 12px;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+        .btn-command:active { background-color: var(--tactical-gold); }
+
+        .asset-frame { 
+            filter: grayscale(100%) contrast(1.1); 
+            border: 1px solid var(--rule-line);
+        }
     </style>
 </head>
 <body class="pt-24">
 
-    <nav class="fixed top-0 w-full z-50 header-sticky">
+    <nav class="fixed top-0 w-full z-50 nav-fixed">
         <div class="max-w-screen-md mx-auto px-6 h-20 flex items-center justify-between">
             <div class="logo-bureau">
-                Mickey <span>Max</span>
+                Mickey <span class="text-[#C5A059]">Max</span>
             </div>
             <div class="flex items-center space-x-6">
-                <a href="#intelligence" class="text-[10px] font-bold uppercase tracking-widest opacity-40 hover:opacity-100">Intelligence</a>
+                <a href="#intel" class="text-[10px] font-bold uppercase tracking-widest opacity-40">Intelligence</a>
                 <a href="#briefing" class="bg-black text-white text-[10px] font-bold uppercase tracking-widest px-5 py-2">Briefing</a>
             </div>
         </div>
@@ -74,54 +99,55 @@
         
         <section class="py-16">
             <div class="flex items-center space-x-3 mb-8">
-                <div class="h-2 w-2 bg-[#00ff41] rounded-full shadow-[0_0_10px_#00ff41]"></div>
+                <div class="h-2 w-2 bg-[#00ff41] rounded-full shadow-[0_0_8px_#00ff41]"></div>
                 <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-400">Strategic Security Group</p>
             </div>
-            <h2 class="font-bold text-7xl md:text-9xl leading-[0.85] mb-12 tracking-tighter uppercase">
-                Tactical <br><span class="text-zinc-300">Strategy.</span>
+            
+            <h2 class="text-6xl md:text-8xl font-bold leading-[0.9] mb-12 uppercase tracking-tighter">
+                Tactical <br><span class="text-zinc-300">Operations.</span>
             </h2>
             
-            <div class="w-full aspect-video border-[4px] border-black overflow-hidden mb-16 asset-utilization">
+            <div class="w-full aspect-video border-[4px] border-black overflow-hidden mb-16 asset-frame">
                 <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/hero.jpg');"></div>
             </div>
 
-            <p class="text-2xl font-light leading-relaxed mb-12 text-zinc-700">
+            <p class="text-2xl font-light leading-relaxed mb-16 text-zinc-700">
                 Mickey Max provides instructional strategy and complex logistical intelligence for high-tier operational environments.
             </p>
         </section>
 
-        <section id="intelligence" class="py-20 border-t-2 border-zinc-100 mb-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <section id="intel" class="py-20 border-t-2 border-zinc-100 mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 
-                <div class="bento-card">
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059] mb-4">I. Instruction</h4>
-                    <div class="aspect-square bg-zinc-50 mb-6 overflow-hidden asset-utilization">
+                <div class="bento-box">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059] mb-6">01 // Instruction</h4>
+                    <div class="aspect-video bg-zinc-50 mb-8 overflow-hidden asset-frame">
                         <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/instruction.jpg');"></div>
                     </div>
-                    <p class="text-[11px] font-bold uppercase tracking-widest leading-relaxed">Unit Movement & Defensive Posture Training.</p>
+                    <p class="text-[11px] font-bold uppercase tracking-widest">Tactical Unit Training & Defensive Posture.</p>
                 </div>
 
-                <div class="bento-card">
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059] mb-4">II. Logistics</h4>
-                    <div class="aspect-square bg-zinc-50 mb-6 overflow-hidden asset-utilization">
+                <div class="bento-box">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059] mb-6">02 // Logistics</h4>
+                    <div class="aspect-video bg-zinc-50 mb-8 overflow-hidden asset-frame">
                         <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/logistics.jpg');"></div>
                     </div>
-                    <p class="text-[11px] font-bold uppercase tracking-widest leading-relaxed">Global Route Intelligence & Secure Supply Chains.</p>
+                    <p class="text-[11px] font-bold uppercase tracking-widest">Global Route Intelligence & Secure Supply Chains.</p>
                 </div>
 
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bento-card bg-zinc-50 border-dashed border-zinc-200">
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059] mb-4">Instagram Intel</h4>
-                    <div class="widget-frame">
-                        <p class="text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-300 text-center px-4">[ Paste Instagram Widget Here ]</p>
+                <div class="bento-box bg-zinc-50 border-dashed border-zinc-300 min-h-[300px] flex flex-col justify-between">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Instagram Intel</h4>
+                    <div class="text-center opacity-20 py-12">
+                        <p class="text-[9px] font-bold uppercase tracking-widest">[ Connect Widget Here ]</p>
                     </div>
                 </div>
-                <div class="bento-card bg-zinc-50 border-dashed border-zinc-200">
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059] mb-4">Field Updates</h4>
-                    <div class="widget-frame">
-                        <p class="text-[9px] font-bold uppercase tracking-[0.3em] text-zinc-300 text-center px-4">[ Paste Facebook / Snapchat Widget Here ]</p>
+                <div class="bento-box bg-zinc-50 border-dashed border-zinc-300 min-h-[300px] flex flex-col justify-between">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Field Updates</h4>
+                    <div class="text-center opacity-20 py-12">
+                        <p class="text-[9px] font-bold uppercase tracking-widest">[ Connect Snapchat/Facebook Widget Here ]</p>
                     </div>
                 </div>
             </div>
@@ -129,37 +155,37 @@
 
         <section id="briefing" class="py-32 border-t-4 border-black">
             <div class="text-center mb-24">
-                <p class="text-[11px] font-bold tracking-[0.6em] text-[#C5A059] uppercase mb-4">Institutional Intake Protocol</p>
-                <h3 class="font-bold text-6xl md:text-8xl uppercase tracking-tighter text-zinc-900 leading-tight">Consultation Briefing</h3>
+                <p class="text-[11px] font-bold tracking-[0.6em] text-[#C5A059] uppercase mb-4">Direct Communication Protocol</p>
+                <h3 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter text-zinc-900 leading-tight">Consultation Briefing</h3>
             </div>
 
             <form action="https://formspree.io/f/maqagqro" method="POST" class="space-y-12">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div><label>Full Identity / Rank</label><input type="text" name="name" required placeholder="Full Name"></div>
-                    <div><label>Organization / Agency</label><input type="text" name="agency" placeholder="Unit or Company"></div>
+                    <div><label>Full Identity</label><input type="text" name="name" required placeholder="Name / Rank"></div>
+                    <div><label>Organization / Agency</label><input type="text" name="agency" placeholder="Organization"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div><label>Official Email</label><input type="email" name="email" required placeholder="contact@agency.gov"></div>
                     <div><label>Direct Secure Line</label><input type="tel" name="phone" required placeholder="+1 (000) 000-0000"></div>
                 </div>
-                <div><label>Operational Site Location Address</label><input type="text" name="address" placeholder="Physical HQ or Site Location"></div>
+                <div><label>Operational Site Location Address</label><input type="text" name="address" placeholder="Physical Address"></div>
                 <div class="grid grid-cols-2 gap-10">
                     <div><label>Requested Briefing Date</label><input type="date" name="date" required></div>
                     <div><label>Requested Briefing Time</label><input type="time" name="time" required></div>
                 </div>
                 <div><label>Mission Objective</label><textarea name="message" rows="5" required placeholder="Describe the briefing or tactical requirement..."></textarea></div>
                 
-                <button type="submit" class="btn-bureau font-bold text-xl tracking-[0.4em]">Transmit Briefing Request</button>
+                <button type="submit" class="btn-command">Transmit Briefing Request</button>
             </form>
         </section>
 
     </main>
 
     <footer class="py-24 border-t-2 border-black bg-white text-center">
-        <div class="logo-bureau mb-8">
-            Mickey <span>Max</span>
+        <div class="logo-bureau justify-center inline-flex mb-12 border-none p-0">
+            Mickey <span class="text-[#C5A059]">Max</span>
         </div>
-        <div class="flex justify-center space-x-10 text-[10px] font-bold tracking-[0.5em] uppercase opacity-20 mb-12">
+        <div class="flex justify-center space-x-10 text-[9px] font-bold tracking-[0.5em] uppercase opacity-20 mb-12">
             <span>Training</span><span>Logistics</span><span>Investigations</span><span>Security</span>
         </div>
         <p class="text-[9px] text-zinc-300 tracking-widest uppercase leading-loose">
