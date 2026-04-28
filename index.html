@@ -44,24 +44,17 @@
             border-bottom: var(--border-heavy);
         }
 
-        .bento-card {
-            border: 2px solid var(--ink);
-            padding: 1.5rem;
-            background: #ffffff;
-            height: 100%;
-        }
-
-        /* Visible Form Boxes */
+        /* FIXED FORM BOXES - Visible with solid border */
         input, textarea {
-            background-color: #f4f4f4 !important; /* Visible gray box */
-            border: none !important;
-            border-bottom: 2px solid var(--ink) !important; /* Professional line */
+            background-color: #fcfcfc !important; 
+            border: 1px solid #000 !important; /* Solid black border for visibility */
             border-radius: 0px !important;
             padding: 1rem !important;
             font-size: 16px !important;
             color: #000 !important;
             width: 100%;
-            margin-top: 5px;
+            margin-top: 8px;
+            display: block;
         }
 
         .tag-tactical {
@@ -86,9 +79,13 @@
             font-size: 12px;
             width: 100%;
             margin-top: 2rem;
+            cursor: pointer;
         }
 
-        .star-gold { color: var(--gold); font-size: 14px; }
+        .star-gold { color: var(--gold); font-size: 18px; letter-spacing: 2px; }
+        
+        /* Ensure footer doesn't get cut off by iPhone bottom bar */
+        footer { padding-bottom: calc(4rem + env(safe-area-inset-bottom)); }
     </style>
 </head>
 <body class="pt-24">
@@ -117,17 +114,17 @@
         <section id="intel" class="py-16 border-t-2 border-zinc-200">
             <p class="text-[12px] font-black tracking-[0.4em] text-[#8a6d3b] uppercase mb-10">01 // Operational Capability</p>
             <div class="grid grid-cols-1 gap-6">
-                <div class="bento-card border-l-[10px] border-l-[#556b2f]">
+                <div class="p-6 border-2 border-black border-l-[12px] border-l-[#556b2f]">
                     <span class="tag-tactical">Instruction</span>
                     <h3 class="text-2xl font-bold uppercase mb-3">Tactical Training</h3>
-                    <div class="h-48 bg-zinc-100 overflow-hidden mb-4 border border-zinc-200">
+                    <div class="h-48 bg-zinc-100 overflow-hidden border border-zinc-200">
                         <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/instruction.jpg');"></div>
                     </div>
                 </div>
-                <div class="bento-card border-l-[10px] border-l-black">
+                <div class="p-6 border-2 border-black border-l-[12px] border-l-black">
                     <span class="tag-tactical" style="background: black;">Intelligence</span>
                     <h3 class="text-2xl font-bold uppercase mb-3">Operational Logistics</h3>
-                    <div class="h-48 bg-zinc-100 overflow-hidden mb-4 border border-zinc-200">
+                    <div class="h-48 bg-zinc-100 overflow-hidden border border-zinc-200">
                         <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/logistics.jpg');"></div>
                     </div>
                 </div>
@@ -135,56 +132,54 @@
         </section>
 
         <section class="py-16 border-t-2 border-zinc-200">
-            <p class="text-[12px] font-black tracking-[0.4em] text-[#8a6d3b] uppercase mb-8">02 // Field Intelligence</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-medium leading-relaxed text-zinc-800">
-                <div class="p-4 border-l-2 border-zinc-200">• Direct experience with Tier 1 defense firms (Triple Canopy/Blackwater).</div>
-                <div class="p-4 border-l-2 border-zinc-200">• Specialization in high-risk route intelligence and logistics.</div>
-                <div class="p-4 border-l-2 border-zinc-200">• Expert instructional blocks for LEO and military personnel.</div>
-                <div class="p-4 border-l-2 border-zinc-200">• Global deployment capability for executive protection details.</div>
-            </div>
-        </section>
-
-        <section class="py-16 border-t-2 border-zinc-200">
-            <p class="text-[12px] font-black tracking-[0.4em] text-[#8a6d3b] uppercase mb-10">03 // Operational Ratings</p>
-            <div class="grid grid-cols-1 gap-4">
-                <div class="p-6 border border-zinc-200 bg-zinc-50">
-                    <div class="star-gold mb-2">★★★★★</div>
-                    <p class="italic text-sm text-zinc-700">"Exceptional tactical oversight during high-threat transit. Absolute professional."</p>
-                    <p class="text-[10px] font-bold mt-4 uppercase">— Anonymous Government Contractor</p>
+            <p class="text-[12px] font-black tracking-[0.4em] text-[#8a6d3b] uppercase mb-10">02 // Service Ratings</p>
+            <div class="space-y-6">
+                <div class="p-6 border-2 border-black bg-zinc-50">
+                    <div class="star-gold">★★★★★</div>
+                    <p class="mt-4 font-medium italic text-zinc-800">"Highly effective tactical oversight. The Logistics hardening provided saved our transit timeline in a high-risk zone."</p>
+                    <p class="text-[10px] font-bold mt-4 tracking-widest text-zinc-500 uppercase">— Verified Gov Contractor</p>
                 </div>
-                <div class="p-6 border border-zinc-200 bg-zinc-50">
-                    <div class="star-gold mb-2">★★★★★</div>
-                    <p class="italic text-sm text-zinc-700">"The instructional strategy provided to our team was military-grade and immediately actionable."</p>
-                    <p class="text-[10px] font-bold mt-4 uppercase">— Private Security Firm Lead</p>
-                </div>
-                <div class="p-6 border border-zinc-200 bg-zinc-50">
-                    <div class="star-gold mb-2">★★★★★</div>
-                    <p class="italic text-sm text-zinc-700">"Discreet, efficient, and highly effective executive protection detail."</p>
-                    <p class="text-[10px] font-bold mt-4 uppercase">— Corporate Executive Client</p>
+                <div class="p-6 border-2 border-black bg-zinc-50">
+                    <div class="star-gold">★★★★★</div>
+                    <p class="mt-4 font-medium italic text-zinc-800">"Professional, discreet, and calculated. Best-in-class instructional strategy for our specialized team."</p>
+                    <p class="text-[10px] font-bold mt-4 tracking-widest text-zinc-500 uppercase">— Anonymous Executive</p>
                 </div>
             </div>
         </section>
 
-        <section id="briefing" class="py-20 border-t-[6px] border-black mb-10">
-            <div class="text-center mb-16">
-                <h3 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter text-black">Briefing</h3>
-                <p class="text-[10px] font-bold tracking-[0.4em] text-zinc-400 mt-4 uppercase">Secure Intake Protocol</p>
+        <section id="briefing" class="py-20 border-t-[6px] border-black">
+            <div class="mb-12">
+                <h3 class="text-6xl font-bold uppercase tracking-tighter text-black">Briefing</h3>
+                <p class="text-[11px] font-bold tracking-[0.4em] text-zinc-500 mt-2 uppercase">Input Required Information Below</p>
             </div>
+            
             <form action="https://formspree.io/f/maqagqro" method="POST" class="space-y-8">
-                <div><label class="text-[11px] font-bold uppercase">Full Identity</label><input type="text" name="name" required></div>
-                <div><label class="text-[11px] font-bold uppercase">Organization</label><input type="text" name="agency"></div>
-                <div><label class="text-[11px] font-bold uppercase">Official Email</label><input type="email" name="email" required></div>
-                <div><label class="text-[11px] font-bold uppercase">Operational Objective</label><textarea name="message" rows="4" required></textarea></div>
+                <div>
+                    <label class="text-[11px] font-black uppercase tracking-widest">Full Identity / Rank</label>
+                    <input type="text" name="name" required placeholder="Type Name Here">
+                </div>
+                <div>
+                    <label class="text-[11px] font-black uppercase tracking-widest">Organization</label>
+                    <input type="text" name="agency" placeholder="Type Organization Here">
+                </div>
+                <div>
+                    <label class="text-[11px] font-black uppercase tracking-widest">Official Email</label>
+                    <input type="email" name="email" required placeholder="Type Email Here">
+                </div>
+                <div>
+                    <label class="text-[11px] font-black uppercase tracking-widest">Operational Objective</label>
+                    <textarea name="message" rows="5" required placeholder="Type Details Here"></textarea>
+                </div>
                 <button type="submit" class="btn-command">Transmit Briefing Request</button>
             </form>
         </section>
 
     </main>
 
-    <footer class="py-20 border-t-2 border-black bg-white text-center mt-20">
-        <div class="logo-bureau border-none mb-6">Mickey <span>Max</span></div>
-        <p class="text-[10px] text-zinc-400 font-bold tracking-[0.4em] uppercase mb-4">Tactical • Strategic • Operational</p>
-        <p class="text-[9px] text-zinc-300 font-bold uppercase">&copy; 2026 Mickey Max Strategic Security Group.</p>
+    <footer class="py-20 border-t-2 border-black bg-white text-center">
+        <div class="logo-bureau border-none mb-4">Mickey <span>Max</span></div>
+        <p class="text-[10px] text-zinc-500 font-bold tracking-[0.4em] uppercase mb-4">Tactical • Strategic • Operational</p>
+        <p class="text-[9px] text-zinc-400 font-bold uppercase">&copy; 2026 Mickey Max Strategic Security Group.</p>
     </footer>
 
 </body>
