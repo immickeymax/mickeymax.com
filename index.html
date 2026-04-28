@@ -12,7 +12,7 @@
             --ink: #000000; 
             --gold: #C5A059; 
             --olive: #556b2f;
-            --text-main: #1a1a1a; /* Darker for readability */
+            --text-main: #1a1a1a; 
             --border-heavy: 3px solid #000000;
         }
         
@@ -22,7 +22,7 @@
             font-family: 'Space Grotesk', sans-serif; 
             -webkit-font-smoothing: antialiased;
             letter-spacing: -0.02em;
-            overflow-x: hidden; /* Prevents side-scrolling on iPhone */
+            overflow-x: hidden;
         }
 
         .logo-bureau {
@@ -44,40 +44,11 @@
             border-bottom: var(--border-heavy);
         }
 
-        /* Bento Components */
         .bento-card {
             border: 2px solid var(--ink);
-            padding: 1.5rem; /* Reduced for mobile */
+            padding: 1.5rem;
             background: #ffffff;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @media (min-width: 768px) {
-            .bento-card { padding: 2.5rem; }
-        }
-
-        .portal-link {
-            border: 1px solid rgba(0,0,0,0.2); /* Darker border */
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 10px;
-            text-decoration: none;
-            color: var(--ink);
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
-        /* Form Styling */
-        input, select, textarea {
-            background: #f8f8f8 !important;
-            border: 2px solid #333 !important; /* Darker border */
-            border-radius: 0px !important;
-            padding: 1rem !important;
-            font-size: 16px !important; /* Prevents iOS auto-zoom */
-            color: #000 !important;
-            width: 100%;
         }
 
         .asset-frame { 
@@ -96,18 +67,27 @@
             letter-spacing: 0.1em;
             margin-bottom: 1rem;
         }
+
+        .btn-command {
+            background-color: var(--ink);
+            color: #fff;
+            padding: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            font-size: 12px;
+            width: 100%;
+        }
     </style>
 </head>
 <body class="pt-24">
 
     <nav class="fixed top-0 w-full z-50 nav-fixed">
         <div class="max-w-screen-md mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="logo-bureau">
-                Mickey <span>Max</span>
-            </div>
+            <div class="logo-bureau">Mickey <span>Max</span></div>
             <div class="flex items-center space-x-4">
-                <a href="#intel" class="text-[11px] font-black uppercase tracking-widest text-black">Intel</a>
-                <a href="#briefing" class="bg-black text-white text-[11px] font-bold uppercase tracking-widest px-4 py-2">Briefing</a>
+                <a href="#intel" class="text-[11px] font-black uppercase text-black">Intel</a>
+                <a href="#briefing" class="bg-black text-white text-[11px] font-bold px-4 py-2">Briefing</a>
             </div>
         </div>
     </nav>
@@ -125,7 +105,7 @@
             </h2>
             
             <div class="w-full aspect-video border-[4px] border-black overflow-hidden mb-12 asset-frame">
-                <div class="w-full h-full bg-cover bg-center bg-[#1a1a1a]" style="background-image: url('images/hero.jpg');"></div>
+                <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/hero.jpg');"></div>
             </div>
 
             <p class="text-xl md:text-2xl font-normal leading-relaxed mb-16 text-zinc-900">
@@ -141,73 +121,47 @@
                 <div class="bento-card border-l-[10px] border-l-[#556b2f]">
                     <span class="tag-tactical">01 // Tactical Security</span>
                     <h3 class="text-2xl font-bold uppercase mb-3">Military Contractor Training</h3>
-                    <p class="text-sm text-zinc-900 mb-6 leading-relaxed">High-stakes operational training. Built on 20 years of defense experience.</p>
-                    <div class="h-48 bg-zinc-200 asset-frame"></div>
+                    <div class="h-48 bg-zinc-200 asset-frame overflow-hidden mb-4">
+                        <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/instruction.jpg');"></div>
+                    </div>
                 </div>
 
                 <div class="bento-card border-l-[10px] border-l-black">
-                    <span class="tag-tactical" style="background: black;">02 // Executive Protection</span>
-                    <h3 class="text-2xl font-bold uppercase mb-3">Corporate & Executive Detail</h3>
-                    <p class="text-sm text-zinc-900 mb-6 leading-relaxed">Sophisticated close protection for high-net-worth leadership.</p>
-                    <div class="h-48 bg-zinc-200 asset-frame"></div>
+                    <span class="tag-tactical" style="background: black;">02 // Operational Intelligence</span>
+                    <h3 class="text-2xl font-bold uppercase mb-3">Logistics & Supply Hardening</h3>
+                    <div class="h-48 bg-zinc-200 asset-frame overflow-hidden mb-4">
+                        <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/logistics.jpg');"></div>
+                    </div>
                 </div>
 
                 <div class="bento-card border-l-[10px] border-l-[#C5A059]">
-                    <span class="tag-tactical" style="background: #C5A059;">03 // Private Bodyguard</span>
-                    <h3 class="text-2xl font-bold uppercase mb-3">High-Threat Protection</h3>
-                    <p class="text-sm text-zinc-900 mb-6 leading-relaxed">Dedicated private bodyguard services for high-risk environments.</p>
-                    <div class="h-48 bg-zinc-200 asset-frame"></div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="py-12 border-t-2 border-zinc-200 mb-20">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bento-card bg-zinc-50">
-                    <h4 class="text-[11px] font-black uppercase tracking-widest text-black mb-6">Intelligence Feed</h4>
-                    <div class="space-y-1">
-                        <a href="#" class="portal-link"><span>INSTAGRAM</span><span>→</span></a>
-                        <a href="#" class="portal-link"><span>FACEBOOK</span><span>→</span></a>
+                    <span class="tag-tactical" style="background: #C5A059;">03 // Executive Protection</span>
+                    <h3 class="text-2xl font-bold uppercase mb-3">High-Threat Detail</h3>
+                    <div class="h-48 bg-zinc-200 asset-frame overflow-hidden mb-4">
+                        <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/hero.jpg');"></div>
                     </div>
                 </div>
-                <div class="bento-card bg-zinc-900 text-white border-black">
-                    <h4 class="text-[11px] font-bold uppercase tracking-widest text-[#C5A059] mb-8">Bureau Status</h4>
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="h-2 w-2 bg-[#00ff41] rounded-full shadow-[0_0_8px_#00ff41]"></div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest">Active / Deployable</p>
-                    </div>
-                    <p class="text-2xl font-light italic">Accepting Briefings</p>
-                </div>
+
             </div>
         </section>
 
         <section id="briefing" class="py-20 border-t-[6px] border-black">
             <div class="text-center mb-16">
-                <p class="text-[12px] font-black tracking-[0.5em] text-[#C5A059] uppercase mb-4">Direct Intake Directive</p>
                 <h3 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter text-black">Briefing</h3>
             </div>
-
             <form action="https://formspree.io/f/maqagqro" method="POST" class="space-y-10">
-                <div class="space-y-6">
-                    <div><label class="text-black opacity-100">Full Identity / Rank</label><input type="text" name="name" required></div>
-                    <div><label class="text-black opacity-100">Organization</label><input type="text" name="agency"></div>
-                    <div><label class="text-black opacity-100">Official Email</label><input type="email" name="email" required></div>
-                    <div><label class="text-black opacity-100">Operational Objective</label><textarea name="message" rows="5" required></textarea></div>
-                </div>
-                <button type="submit" class="btn-command text-lg tracking-[0.3em]">Transmit Briefing Request</button>
+                <div><label class="text-black font-bold">Full Identity</label><input type="text" name="name" required></div>
+                <div><label class="text-black font-bold">Organization</label><input type="text" name="agency"></div>
+                <div><label class="text-black font-bold">Official Email</label><input type="email" name="email" required></div>
+                <div><label class="text-black font-bold">Objective</label><textarea name="message" rows="5" required></textarea></div>
+                <button type="submit" class="btn-command">Transmit Briefing Request</button>
             </form>
         </section>
 
     </main>
 
-    <footer class="py-16 border-t-2 border-black bg-white text-center px-6">
-        <div class="logo-bureau justify-center inline-flex mb-8 border-none p-0">
-            Mickey <span>Max</span>
-        </div>
-        <p class="text-[10px] text-black font-bold tracking-widest uppercase">
-            &copy; 2026 Mickey Max Strategic Security Group.
-        </p>
+    <footer class="py-16 bg-white text-center">
+        <div class="logo-bureau border-none">Mickey <span>Max</span></div>
     </footer>
 
 </body>
