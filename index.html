@@ -7,14 +7,45 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --onyx: #050505; --gold: #C5A059; --gold-low: rgba(197, 160, 89, 0.1); --paper: #fdfdfd; }
-        body { background-color: var(--onyx); color: var(--paper); font-family: 'Public Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+        :root { 
+            --onyx: #050505; 
+            --gold-leaf: #C5A059; 
+            --gold-glow: rgba(197, 160, 89, 0.15);
+            --paper: #fdfdfd; 
+        }
+        body { 
+            background-color: var(--onyx); 
+            color: var(--paper); 
+            font-family: 'Public Sans', sans-serif; 
+            -webkit-font-smoothing: antialiased;
+        }
         .serif-elite { font-family: 'Cormorant Garamond', serif; }
         
-        .logo-container { border: 1px solid var(--gold); padding: 8px 16px; display: inline-block; }
-        .stealth-nav { background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(197, 160, 89, 0.1); }
+        /* The Mickey Max Gold Logo Lockup */
+        .logo-container {
+            border: 1px solid var(--gold-leaf);
+            padding: 8px 16px;
+            display: inline-block;
+            transition: all 0.4s ease;
+        }
+        .logo-container:hover { background: var(--gold-glow); }
 
-        /* Input Styling - Executive Underline */
+        /* Stealth Glass Nav */
+        .stealth-nav {
+            background: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+        }
+
+        /* Tactical Dividers */
+        .gold-divider { 
+            height: 1px; 
+            background: linear-gradient(90deg, transparent 0%, var(--gold-leaf) 50%, transparent 100%);
+            opacity: 0.6;
+        }
+
+        /* Executive Input Fields */
         input, select, textarea {
             background: transparent !important;
             border-bottom: 1px solid rgba(197, 160, 89, 0.3) !important;
@@ -25,18 +56,23 @@
             color: #fff !important;
             width: 100%;
         }
-        input:focus { border-bottom-color: var(--gold) !important; outline: none; }
-        ::placeholder { color: rgba(255,255,255,0.2); }
+        input:focus { border-bottom-color: var(--gold-leaf) !important; outline: none; }
 
         .btn-gold {
-            background-color: var(--gold); color: #000; padding: 1.25rem;
-            font-weight: 800; text-transform: uppercase; letter-spacing: 0.3em;
-            font-size: 11px; width: 100%; transition: all 0.3s ease;
+            background-color: var(--gold-leaf);
+            color: #000;
+            padding: 1.25rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 11px;
+            width: 100%;
+            transition: all 0.3s ease;
         }
-        
-        /* Availability Grid */
-        .status-badge { border: 1px solid var(--gold); color: var(--gold); padding: 2px 8px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; }
-        .avail-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 20px; }
+        .btn-gold:active { transform: scale(0.98); opacity: 0.9; }
+
+        /* Image Framing */
+        .asset-frame { border: 1px solid rgba(197, 160, 89, 0.15); filter: grayscale(100%); }
     </style>
 </head>
 <body class="pt-24">
@@ -44,98 +80,117 @@
     <nav class="fixed top-0 w-full z-50 stealth-nav">
         <div class="max-w-screen-md mx-auto px-8 h-20 flex items-center justify-between">
             <div class="logo-container">
-                <h1 class="serif-elite text-xl font-semibold tracking-widest uppercase">Mickey <span class="text-[#C5A059]">Max</span></h1>
+                <h1 class="serif-elite text-xl font-semibold tracking-widest uppercase">
+                    Mickey <span class="text-[#C5A059]">Max</span>
+                </h1>
             </div>
-            <div class="flex items-center space-x-6">
-                <a href="#schedule" class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#C5A059]">Schedule</a>
-                <a href="#inquiry" class="text-[9px] font-bold uppercase tracking-[0.2em] border border-[#C5A059]/40 px-5 py-2">Briefing</a>
+            <div class="flex items-center space-x-8">
+                <a href="#expertise" class="text-[9px] font-bold uppercase tracking-[0.2em] opacity-50 hover:opacity-100 transition-opacity">Expertise</a>
+                <a href="#inquiry" class="text-[9px] font-bold uppercase tracking-[0.2em] text-[#C5A059] border border-[#C5A059]/40 px-5 py-2">Briefing</a>
             </div>
         </div>
     </nav>
 
     <main class="max-w-screen-md mx-auto px-8">
         
-        <section id="schedule" class="py-24 border-t border-white/10">
-            <div class="flex items-center space-x-4 mb-12">
+        <section class="py-16 text-center md:text-left">
+            <div class="flex items-center justify-center md:justify-start space-x-4 mb-10">
                 <div class="h-[1px] w-12 bg-[#C5A059]"></div>
-                <h3 class="serif-elite text-4xl italic text-[#C5A059]">Operational Availability</h3>
+                <p class="text-[10px] font-bold uppercase tracking-[0.5em] text-[#C5A059]">Private Professional Alliance</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="avail-box">
-                    <p class="text-[10px] font-bold text-white/40 uppercase mb-2">Current Status</p>
-                    <p class="serif-elite text-2xl italic">Accepting Q2 & Q3 Consultations</p>
-                </div>
-                <div class="avail-box">
-                    <p class="text-[10px] font-bold text-white/40 uppercase mb-2">Immediate Response</p>
-                    <span class="status-badge">Active</span>
-                    <p class="text-xs text-white/40 mt-4 leading-relaxed">Emergency logistical support and short-notice training blocks available by direct request.</p>
-                </div>
+            <h2 class="serif-elite text-6xl md:text-8xl leading-tight mb-12">
+                Operational <br><span class="italic text-white/30">Intelligence.</span>
+            </h2>
+            
+            <div class="w-full aspect-[16/9] bg-zinc-900 overflow-hidden mb-16 asset-frame">
+                <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/hero.jpg');"></div>
             </div>
+
+            <p class="serif-elite text-3xl font-light leading-snug mb-12">
+                Mickey Max provides instructional strategy and complex logistical solutions for elite operational environments.
+            </p>
+            <div class="gold-divider mb-24"></div>
+        </section>
+
+        <section id="expertise" class="space-y-40 mb-40">
+            
+            <div class="space-y-10">
+                <div class="flex items-center justify-between">
+                    <h3 class="serif-elite text-4xl italic text-[#C5A059]">Tactical Instruction</h3>
+                    <span class="text-[10px] font-bold tracking-[0.3em] opacity-20 uppercase">SECURE-01</span>
+                </div>
+                <div class="w-full aspect-video bg-zinc-900 overflow-hidden asset-frame">
+                    <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/instruction.jpg');"></div>
+                </div>
+                <p class="text-white/50 text-sm leading-loose max-w-xl font-light">
+                    Specialized training blocks for movement precision and defensive posture. Mickey Max ensures absolute professional rigor for active duty personnel and security contractors.
+                </p>
+            </div>
+
+            <div class="space-y-10">
+                <div class="flex items-center justify-between">
+                    <h3 class="serif-elite text-4xl italic text-[#C5A059]">Complex Logistics</h3>
+                    <span class="text-[10px] font-bold tracking-[0.3em] opacity-20 uppercase">SECURE-02</span>
+                </div>
+                <div class="w-full aspect-video bg-zinc-900 overflow-hidden asset-frame">
+                    <div class="w-full h-full bg-cover bg-center" style="background-image: url('images/logistics.jpg');"></div>
+                </div>
+                <p class="text-white/50 text-sm leading-loose max-w-xl font-light">
+                    Global route intelligence and supply chain management. Mickey Max ensures movement remains efficient and uncompromised across high-risk landscapes.
+                </p>
+            </div>
+
         </section>
 
         <section id="inquiry" class="py-32 border-t border-white/10">
             <div class="text-center mb-24">
-                <p class="text-[10px] font-bold tracking-[0.6em] text-[#C5A059] uppercase mb-4">Engagement Protocol</p>
+                <p class="text-[10px] font-bold tracking-[0.6em] text-[#C5A059] uppercase mb-4">Direct Communication Protocol</p>
                 <h3 class="serif-elite text-6xl italic">Briefing Request</h3>
             </div>
 
-            <form action="https://formspree.io/f/maqagqro" method="POST" class="max-y-12">
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-                    <div>
-                        <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-1 block">Full Legal Name</label>
-                        <input type="text" name="name" required placeholder="Full Name">
-                    </div>
-                    <div>
-                        <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-1 block">Company / Agency</label>
-                        <input type="text" name="company" placeholder="Organization Name">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-                    <div>
-                        <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-1 block">Official Email</label>
-                        <input type="email" name="email" required placeholder="contact@agency.gov">
-                    </div>
-                    <div>
-                        <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-1 block">Secure Phone</label>
-                        <input type="tel" name="phone" required placeholder="+1 (000) 000-0000">
-                    </div>
-                </div>
-
-                <div class="mb-12">
-                    <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-1 block">Physical Address (Optional)</label>
-                    <input type="text" name="address" placeholder="HQ or Training Site Address">
+            <form action="https://formspree.io/f/maqagqro" method="POST" class="max-w-md mx-auto space-y-16">
+                <div>
+                    <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-2 block">Client Identity</label>
+                    <input type="text" name="name" required class="serif-elite text-2xl" placeholder="Full Legal Name">
                 </div>
                 
-                <div class="grid grid-cols-2 gap-12 mb-12">
+                <div class="grid grid-cols-2 gap-12">
                     <div>
-                        <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-1 block">Requested Date</label>
+                        <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-2 block">Preferred Date</label>
                         <input type="date" name="date" required>
                     </div>
                     <div>
-                        <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-1 block">Requested Time</label>
+                        <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-2 block">Preferred Time</label>
                         <input type="time" name="time" required>
                     </div>
                 </div>
 
-                <div class="mb-16">
-                    <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-1 block">Operational Brief</label>
-                    <textarea name="message" rows="4" required placeholder="Briefly describe the training or logistics objective..."></textarea>
+                <div>
+                    <label class="text-[9px] font-bold uppercase tracking-[0.3em] text-[#C5A059] mb-2 block">Operational Brief</label>
+                    <textarea name="message" rows="4" required class="serif-elite text-xl" placeholder="Briefly describe the requirement..."></textarea>
                 </div>
 
-                <button type="submit" class="btn-gold serif-elite !text-base tracking-widest font-semibold">Confirm Submission to Mickey Max</button>
+                <button type="submit" class="btn-gold serif-elite !text-base tracking-widest font-semibold">
+                    Submit Inquiry to Mickey Max
+                </button>
             </form>
         </section>
 
     </main>
 
-    <footer class="py-24 border-t border-white/5 bg-[#030303] text-center">
-        <h5 class="serif-elite text-3xl font-light text-[#C5A059] mb-8">Mickey Max</h5>
-        <p class="text-[9px] text-white/20 tracking-[0.2em] uppercase leading-loose">
-            &copy; 2026 Mickey Max Strategy. Professional Security Alliance. <br>Authorized Consultation Only.
-        </p>
+    <footer class="py-24 border-t border-white/5 bg-[#030303]">
+        <div class="max-w-screen-md mx-auto px-8 text-center">
+            <h5 class="serif-elite text-3xl font-light text-[#C5A059] mb-8">Mickey Max</h5>
+            <div class="flex justify-center space-x-10 text-[9px] font-bold tracking-[0.4em] uppercase opacity-20 mb-12">
+                <span>Strategy</span>
+                <span>Logistics</span>
+                <span>Instruction</span>
+            </div>
+            <p class="text-[9px] text-white/10 tracking-[0.2em] uppercase leading-loose">
+                &copy; 2026 Mickey Max Strategy. Professional Security Alliance. <br>Authorized Consultation Only.
+            </p>
+        </div>
     </footer>
 
 </body>
