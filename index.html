@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MickeyMax | Book Your Appointment</title>
+    <title>MickeyMax | Strategy. Logistics. Security.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #080909; font-family: 'DM Sans', sans-serif; color: #e8e4dc; }
+        body { background-color: #080909; font-family: 'DM Sans', sans-serif; color: #e8e4dc; scroll-behavior: smooth; }
         .serif { font-family: 'Cormorant Garamond', serif; }
         .gold-text { color: #d4a017; }
         .gold-bg { background-color: #d4a017; }
@@ -15,64 +15,121 @@
             background: rgba(255,255,255,0.05) !important; 
             border: 1px solid rgba(212, 160, 23, 0.2) !important;
             color: white !important;
+            border-radius: 4px;
         }
-        .btn-shimmer:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(212, 160, 23, 0.2); transition: all 0.3s; }
+        input:focus { border-color: #d4a017 !important; outline: none; }
+        .card-glow:hover { box-shadow: 0 10px 40px rgba(212, 160, 23, 0.1); transform: translateY(-5px); transition: all 0.3s ease; }
+        #success-state { display: none; }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="sticky top-0 z-50 bg-[#080909]/90 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
+    <nav class="sticky top-0 z-50 bg-[#080909]/95 backdrop-blur-sm border-b border-white/10 px-6 py-4 flex justify-between items-center">
         <h1 class="serif text-2xl gold-text tracking-widest uppercase">MickeyMax</h1>
-        <div class="text-xs uppercase tracking-widest text-white/60">
-            <a href="mailto:schoppman@gmail.com" class="hover:text-[#d4a017]">Contact</a>
+        <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest text-white/60">
+            <a href="#about" class="hover:text-[#d4a017]">About</a>
+            <a href="#services" class="hover:text-[#d4a017]">Services</a>
+            <a href="#appointment" class="hover:text-[#d4a017]">Schedule</a>
         </div>
+        <a href="#appointment" class="text-xs gold-text uppercase tracking-widest px-4 py-2 border border-[#d4a017]/30 rounded hover:bg-[#d4a017]/10">Book Now</a>
     </nav>
 
-    <section class="py-20 px-6 text-center">
-        <p class="gold-text text-xs uppercase tracking-[0.3em] mb-4">Established 2022</p>
-        <h2 class="serif text-5xl md:text-7xl mb-6 leading-tight text-white">Book Your Appointment</h2>
-        <p class="text-white/50 text-lg mb-10 max-w-xl mx-auto">Luxury strategy and VIP consultations tailored for your success.</p>
-        <a href="#appointment" class="gold-bg text-black px-10 py-4 font-bold rounded-sm uppercase tracking-widest text-xs btn-shimmer inline-block">Schedule Appointment</a>
+    <section class="py-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <p class="gold-text text-xs uppercase tracking-[0.4em] mb-4">Tactical Instruction. Logistics. Security.</p>
+            <h2 class="serif text-5xl md:text-7xl mb-8 leading-tight text-white">Strategy & Consulting for the Elite</h2>
+            <p class="text-white/60 text-lg mb-12 max-w-2xl mx-auto">Providing high-end private tactical instruction and complex logistics solutions with unparalleled precision.</p>
+            <a href="#appointment" class="gold-bg text-black px-12 py-5 font-bold rounded uppercase tracking-[0.2em] text-xs transition-transform hover:scale-105 inline-block">Confirm Appointment</a>
+        </div>
     </section>
 
-    <section id="appointment" class="py-16 px-6 bg-white/[0.02]">
-        <div class="max-w-xl mx-auto border border-white/10 p-8 rounded-lg shadow-2xl">
-            <h3 class="serif text-3xl mb-8 text-center text-white">Appointment Details</h3>
+    <section id="services" class="py-20 px-6 bg-white/[0.01] border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="serif text-4xl text-center mb-16 text-white">Core Competencies</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-glow border border-white/10 bg-black/30 p-8 rounded-xl flex flex-col items-center text-center">
+                    <div class="w-16 h-16 gold-bg rounded-full flex items-center justify-center mb-6">
+                        <span class="text-3xl text-black font-boldserif">T</span>
+                    </div>
+                    <h4 class="serif text-2xl gold-text mb-4">Tactical Instruction</h4>
+                    <p class="text-white/60 flex-grow">Private, advanced instructional programs tailored for defense professionals, law enforcement, and private sector contractors.</p>
+                </div>
+                <div class="card-glow border border-white/10 bg-black/30 p-8 rounded-xl flex flex-col items-center text-center">
+                    <div class="w-16 h-16 gold-bg rounded-full flex items-center justify-center mb-6">
+                        <span class="text-3xl text-black font-boldserif">L</span>
+                    </div>
+                    <h4 class="serif text-2xl gold-text mb-4">Complex Logistics</h4>
+                    <p class="text-white/60 flex-grow">End-to-end solutions for challenging operational requirements, including international transport and strategic supply chain management.</p>
+                </div>
+                <div class="card-glow border border-white/10 bg-black/30 p-8 rounded-xl flex flex-col items-center text-center">
+                    <div class="w-16 h-16 gold-bg rounded-full flex items-center justify-center mb-6">
+                        <span class="text-3xl text-black font-boldserif">S</span>
+                    </div>
+                    <h4 class="serif text-2xl gold-text mb-4">Security Strategy</h4>
+                    <p class="text-white/60 flex-grow">Strategic risk assessment and consulting for executive protection, operational security, and private meeting planning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="appointment" class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-xl mx-auto border border-white/10 p-8 md:p-12 rounded-xl shadow-2xl relative">
+            <h3 class="serif text-4xl mb-12 text-center text-white">Booking Request</h3>
             
+            <div id="success-state" class="absolute inset-0 gold-bg flex flex-col items-center justify-center rounded-xl p-10 z-10 text-center text-black">
+                <div class="w-24 h-24 rounded-full flex items-center justify-center mb-6 border-4 border-black">
+                    <span class="text-7xl font-bold">&#x2713;</span>
+                </div>
+                <p class="serif text-4xl mb-4 font-bold">You're Confirmed</p>
+                <p class="text-black/80">Your request is in our system. A final verification will be sent to the email provided.</p>
+            </div>
+
             <form action="https://formspree.io/f/maqagqro" method="POST" class="space-y-6">
-                <div>
-                    <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">Full Name</label>
-                    <input type="text" name="name" required class="w-full p-4 rounded bg-transparent focus:outline-none focus:border-[#d4a017]">
+                <div class="flex flex-col">
+                    <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Full Name</label>
+                    <input type="text" name="name" required class="w-full p-4">
                 </div>
                 <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">Date</label>
-                        <input type="date" name="date" required class="w-full p-4 rounded bg-transparent focus:outline-none focus:border-[#d4a017]">
+                    <div class="flex flex-col">
+                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Date</label>
+                        <input type="date" name="date" required class="w-full p-4">
                     </div>
-                    <div>
-                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">Preferred Time</label>
-                        <input type="time" name="time" required class="w-full p-4 rounded bg-transparent focus:outline-none focus:border-[#d4a017]">
+                    <div class="flex flex-col">
+                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Time</label>
+                        <input type="time" name="time" required class="w-full p-4">
                     </div>
                 </div>
-                <div>
-                    <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">Service Type</label>
-                    <select name="service" class="w-full p-4 rounded bg-transparent focus:outline-none focus:border-[#d4a017]">
-                        <option>VIP Consultation</option>
-                        <option>Strategy Session</option>
-                        <option>Private Meeting</option>
-                    </select>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex flex-col">
+                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Service Type</label>
+                        <select name="service" class="w-full p-4 focus:ring-0">
+                            <option>Private Tactical Meeting</option>
+                            <option>Instructional Consultation</option>
+                            <option>Logistics Strategy Session</option>
+                            <option>Executive Security Review</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Duration</label>
+                        <select name="duration" class="w-full p-4 focus:ring-0">
+                            <option>Initial (30m - 1h)</option>
+                            <option>Strategic Block (2h)</option>
+                            <option>Full-Day Immersion</option>
+                        </select>
+                    </div>
                 </div>
-                <div>
-                    <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2 block">Reason for Appointment</label>
-                    <textarea name="reason" rows="4" required class="w-full p-4 rounded bg-transparent focus:outline-none focus:border-[#d4a017]"></textarea>
+                <div class="flex flex-col">
+                    <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Reason for Appointment</label>
+                    <textarea name="reason" rows="4" required class="w-full p-4"></textarea>
                 </div>
-                <button type="submit" class="w-full gold-bg text-black py-5 font-bold uppercase tracking-[0.2em] text-xs btn-shimmer rounded-sm">Confirm Appointment</button>
+                <button type="submit" class="w-full gold-bg text-black py-5 font-bold uppercase tracking-[0.2em] text-xs rounded transition-transform hover:scale-[1.01]">Confirm Request</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/10 text-center">
-        <p class="text-[10px] uppercase tracking-[0.4em] text-white/20">&copy; 2026 MickeyMax. All Rights Reserved.</p>
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-[10px] uppercase tracking-[0.4em] text-white/20">&copy; 2026 MickeyMax. Established 2022. All Rights Reserved.</p>
+        <p class="text-xs text-white/40 mt-4">For immediate inquiries, contact <a href="mailto:schoppman@gmail.com" class="gold-text">schoppman@gmail.com</a>.</p>
     </footer>
 
 </body>
