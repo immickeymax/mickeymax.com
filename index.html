@@ -34,39 +34,46 @@
         footer { padding-bottom: calc(4rem + env(safe-area-inset-bottom)); }
         .section-divider { border-top: 2px solid #000; margin: 4rem 0; }
 
-        /* New Technical Ledger Style */
         .ledger-box { border: 1px solid #ddd; padding: 1.5rem; background: #fafafa; font-family: monospace; font-size: 12px; position: relative; overflow: hidden; }
-        .ledger-box::after { content: "CLASSIFIED"; position: absolute; top: 10px; right: -30px; transform: rotate(45deg); background: rgba(255,0,0,0.1); color: rgba(255,0,0,0.4); padding: 5px 40px; font-weight: bold; }
+        
+        /* Nav Link Hover */
+        .nav-link { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.3s ease; }
+        .nav-link:hover { color: var(--gold); }
     </style>
 </head>
-<body class="pt-24">
+<body class="pt-32">
 
     <div class="fixed top-20 w-full bg-zinc-900 text-white py-2 z-40 overflow-hidden">
         <div class="max-w-screen-md mx-auto px-6 flex items-center justify-between">
             <div class="flex items-center space-x-2">
                 <div class="h-2 w-2 bg-[#00ff41] rounded-full animate-pulse"></div>
-                <span class="text-[9px] font-bold uppercase tracking-[0.2em]">Ready for Deployment // Southern California HQ</span>
+                <span class="text-[9px] font-bold uppercase tracking-[0.2em]">Operational // S-CAL HQ READY</span>
             </div>
-            <div class="hidden md:block text-[9px] font-bold uppercase tracking-[0.2em] opacity-50">
-                Current Jurisdiction: Federal / State / Municipal
-            </div>
+            <div class="text-[9px] font-bold uppercase tracking-[0.2em] opacity-50">JURISDICTION: FED/STATE/MUNI</div>
         </div>
     </div>
 
     <nav class="fixed top-0 w-full z-50 nav-fixed">
         <div class="max-w-screen-md mx-auto px-6 h-20 flex items-center justify-between">
             <div class="font-bold uppercase text-xl border-l-4 border-black pl-3">Mickey <span class="text-[#C5A059]">Max</span></div>
-            <div class="flex items-center space-x-4">
-                <a href="#intel" class="text-[11px] font-black uppercase text-black">Capabilities</a>
-                <a href="#briefing" class="bg-black text-white text-[11px] font-bold px-4 py-2 uppercase tracking-widest">Briefing</a>
+            
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#intel" class="nav-link">Operations</a>
+                <a href="#sop" class="nav-link">Protocols</a>
+                <a href="#intake" class="nav-link">Agents</a>
+                <a href="#briefing" class="bg-black text-white text-[10px] font-bold px-4 py-2 tracking-widest">Briefing</a>
+            </div>
+            
+            <div class="md:hidden">
+                <a href="#briefing" class="bg-black text-white text-[10px] font-bold px-4 py-2 uppercase">Briefing</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-screen-md mx-auto px-6 sm:px-8 mt-10">
+    <main class="max-w-screen-md mx-auto px-6 sm:px-8">
         
         <section class="pt-6 mb-12">
-            <p class="text-[11px] font-black tracking-[0.4em] text-[#C5A059] uppercase mb-4">Establishing The Standard</p>
+            <p class="text-[11px] font-black tracking-[0.4em] text-[#C5A059] uppercase mb-4">Strategic Security Group</p>
             <h2 class="text-5xl md:text-7xl font-bold headline-main uppercase mb-8">
                 Operational <br>
                 <span class="text-zinc-400">Excellence.</span>
@@ -76,26 +83,26 @@
             </div>
         </section>
 
-        <section class="py-8">
+        <section id="overview" class="py-8">
             <div class="space-y-6 text-xl md:text-2xl font-light leading-relaxed text-black">
                 <p>
                     <span class="font-bold border-b-2 border-[#C5A059]">Mickey Max</span> delivers mission-critical strategic protection and tactical training for federal, state, and municipal entities. 
                 </p>
                 <p>
-                    By integrating military-grade precision with modern logistical hardening, we provide an operational standard that exceeds conventional security models. We don't just secure—we dominate the operational environment.
+                    We bridge the gap between municipal security and international contracting standards—ensuring zero-fail execution for both high-profile personnel and critical infrastructure.
                 </p>
             </div>
         </section>
 
-        <section class="py-12">
+        <section id="sop" class="py-12 border-t-2 border-zinc-100">
             <p class="text-[11px] font-black tracking-[0.3em] text-[#8a6d3b] uppercase mb-8">Technical Methodology // SOP-01</p>
             <div class="ledger-box">
                 <p class="mb-2 uppercase font-bold text-black text-sm">Convoy Hardening Protocol:</p>
                 <ul class="space-y-1 text-zinc-600">
-                    <li>• Phase I: Asymmetrical Threat Assessment (Local/Site)</li>
-                    <li>• Phase II: Route Redundancy & High-Tier Communication Sync</li>
-                    <li>• Phase III: Rapid Response / Asset Extraction Readiness</li>
-                    <li>• Phase IV: Post-Transit Intelligence Debriefing</li>
+                    <li>• Phase I: Asymmetrical Threat Assessment</li>
+                    <li>• Phase II: Route Redundancy & Comms Sync</li>
+                    <li>• Phase III: Rapid Response / Asset Extraction</li>
+                    <li>• Phase IV: Post-Transit Intelligence Debrief</li>
                 </ul>
             </div>
         </section>
@@ -108,7 +115,6 @@
                 <div class="p-6 border-2 border-black border-l-[12px] border-l-[#556b2f] bg-white">
                     <span class="tag-tactical">Instruction</span>
                     <h3 class="text-2xl font-bold uppercase mt-4 mb-3">Tactical Training</h3>
-                    <p class="text-sm text-zinc-700 mb-6 font-medium leading-relaxed">Instructional blocks for LEO and specialized units, focusing on asymmetrical response and field readiness.</p>
                     <div class="h-44 bg-zinc-100 overflow-hidden border border-black">
                         <img src="images/instruction.jpg" class="w-full h-full object-cover">
                     </div>
@@ -117,7 +123,6 @@
                 <div class="p-6 border-2 border-black border-l-[12px] border-l-black bg-white">
                     <span class="tag-tactical">Hardening</span>
                     <h3 class="text-2xl font-bold uppercase mt-4 mb-3">Operational Logistics</h3>
-                    <p class="text-sm text-zinc-700 mb-6 font-medium leading-relaxed">Secure transport and convoy protection for high-value assets, ensuring total route dominance.</p>
                     <div class="h-44 bg-zinc-100 overflow-hidden border border-black">
                         <img src="images/logistics.jpg" class="w-full h-full object-cover">
                     </div>
@@ -125,11 +130,11 @@
             </div>
         </section>
 
-        <section class="py-16 border-t-2 border-zinc-100 mt-12">
-            <div class="bg-zinc-100 p-8 border-2 border-dashed border-zinc-400">
-                <h4 class="text-xl font-bold uppercase mb-2">Agent Intake</h4>
-                <p class="text-sm text-zinc-600 mb-6 font-medium">Recruiting former LEO, retired Federal and State agents for high-tier operational blocks. Top 1% baseline required.</p>
-                <a href="#briefing" class="inline-block text-[10px] font-black uppercase tracking-widest border-b-2 border-black pb-1">Inquire for Intake →</a>
+        <section id="intake" class="py-16 border-t-2 border-zinc-100 mt-12">
+            <div class="bg-zinc-900 p-8 border-2 border-black text-white">
+                <h4 class="text-xl font-bold uppercase mb-2 text-[#C5A059]">Agent Intake Portal</h4>
+                <p class="text-sm opacity-70 mb-6 font-medium">Recruiting former LEO and retired Federal/State agents for high-tier operational blocks. Submit credentials via briefing portal below.</p>
+                <div class="text-[10px] font-black uppercase tracking-[0.3em] py-2 border-y border-white/20">Vetting Status: ACTIVE</div>
             </div>
         </section>
 
