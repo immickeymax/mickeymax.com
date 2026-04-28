@@ -53,7 +53,7 @@
         .ticker-track {
             display: flex;
             white-space: nowrap;
-            animation: move-ticker 70s linear infinite;
+            animation: move-ticker 80s linear infinite;
         }
 
         .ticker-item {
@@ -71,7 +71,7 @@
 
         @keyframes move-ticker {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } /* Halfway for seamless duplication loop */
+            100% { transform: translateX(-50%); } 
         }
 
         .headline-main { line-height: 0.95; letter-spacing: -0.03em; }
@@ -111,15 +111,15 @@
         </div>
 
         <div class="ticker-widget">
-            <div class="ticker-track">
-                <div class="ticker-item"><b>[WORLD NEWS]</b> AP: HEIGHTENED SECURITY POSTURE AT INTERNATIONAL DIPLOMATIC MISSIONS FOLLOWING REGIONAL ESCALATION.</div>
-                <div class="ticker-item"><b>[INTEL]</b> REUTERS: CRITICAL INFRASTRUCTURE DEFENSE PROTOCOLS REVIEWED IN MAJOR METROPOLITAN CORRIDORS.</div>
-                <div class="ticker-item"><b>[ALERT]</b> AP: EXECUTIVE PROTECTION DEMAND RISES AMID SHIFTING GLOBAL THREAT LANDSCAPES.</div>
-                <div class="ticker-item"><b>[LOGISTICS]</b> OSINT: MARITIME TRANSIT LOGISTICS RE-ROUTED TO SECURE MARITIME CHANNELS.</div>
-                <div class="ticker-item"><b>[WORLD NEWS]</b> AP: HEIGHTENED SECURITY POSTURE AT INTERNATIONAL DIPLOMATIC MISSIONS FOLLOWING REGIONAL ESCALATION.</div>
-                <div class="ticker-item"><b>[INTEL]</b> REUTERS: CRITICAL INFRASTRUCTURE DEFENSE PROTOCOLS REVIEWED IN MAJOR METROPOLITAN CORRIDORS.</div>
-                <div class="ticker-item"><b>[ALERT]</b> AP: EXECUTIVE PROTECTION DEMAND RISES AMID SHIFTING GLOBAL THREAT LANDSCAPES.</div>
-                <div class="ticker-item"><b>[LOGISTICS]</b> OSINT: MARITIME TRANSIT LOGISTICS RE-ROUTED TO SECURE MARITIME CHANNELS.</div>
+            <div class="ticker-track" id="live-ticker">
+                <div class="ticker-item"><b>[GLOBAL INTEL]</b> REUTERS: STRAIT OF HORMUZ REMAINS BLOCKED; ENERGY MARKETS BRACE FOR CONTINUED VOLATILITY.</div>
+                <div class="ticker-item"><b>[WORLD NEWS]</b> AP: WHITE HOUSE REVIEWS NEW TEHRAN PROPOSAL TO REOPEN VITAL OIL WATERWAYS.</div>
+                <div class="ticker-item"><b>[SECURITY ALERT]</b> OSINT: MARITIME SECURITY FIRMS REPORT INCREASED DRONE ACTIVITY IN SOUTHERN LEBANON CORRIDORS.</div>
+                <div class="ticker-item"><b>[TACTICAL UPDATE]</b> MICKEY MAX: DEPLOYING ADVANCED CONVOY HARDENING FOR MUNICIPAL ENERGY ASSETS.</div>
+                <div class="ticker-item"><b>[GLOBAL INTEL]</b> REUTERS: STRAIT OF HORMUZ REMAINS BLOCKED; ENERGY MARKETS BRACE FOR CONTINUED VOLATILITY.</div>
+                <div class="ticker-item"><b>[WORLD NEWS]</b> AP: WHITE HOUSE REVIEWS NEW TEHRAN PROPOSAL TO REOPEN VITAL OIL WATERWAYS.</div>
+                <div class="ticker-item"><b>[SECURITY ALERT]</b> OSINT: MARITIME SECURITY FIRMS REPORT INCREASED DRONE ACTIVITY IN SOUTHERN LEBANON CORRIDORS.</div>
+                <div class="ticker-item"><b>[TACTICAL UPDATE]</b> MICKEY MAX: DEPLOYING ADVANCED CONVOY HARDENING FOR MUNICIPAL ENERGY ASSETS.</div>
             </div>
         </div>
 
@@ -142,26 +142,16 @@
     </div>
 
     <main class="max-w-screen-md mx-auto px-6 sm:px-8 mt-12">
-        
         <section class="pt-6 mb-12">
             <p class="text-[11px] font-black tracking-[0.4em] text-[#C5A059] uppercase mb-4">Strategic Security Group</p>
-            <h2 class="text-5xl md:text-7xl font-bold headline-main uppercase mb-8">
-                Operational <br>
-                <span class="text-zinc-400">Excellence.</span>
-            </h2>
-            <div class="hero-frame">
-                <img src="images/hero.jpg" alt="Mickey Max Strategic Operations">
-            </div>
+            <h2 class="text-5xl md:text-7xl font-bold headline-main uppercase mb-8">Operational <br><span class="text-zinc-400">Excellence.</span></h2>
+            <div class="hero-frame"><img src="images/hero.jpg" alt="Mickey Max Strategic Operations"></div>
         </section>
 
         <section id="overview" class="py-8">
             <div class="space-y-6 text-xl md:text-2xl font-light leading-relaxed text-black">
-                <p>
-                    <span class="font-bold border-b-2 border-[#C5A059]">Mickey Max</span> delivers mission-critical strategic protection and tactical training for federal, state, and municipal entities. 
-                </p>
-                <p>
-                    We bridge the gap between municipal security and international contracting standards—ensuring zero-fail execution for both high-profile personnel and critical infrastructure.
-                </p>
+                <p><span class="font-bold border-b-2 border-[#C5A059]">Mickey Max</span> delivers mission-critical strategic protection and tactical training for federal, state, and municipal entities.</p>
+                <p>We ensure zero-fail execution for high-profile personnel and critical infrastructure through military-grade precision.</p>
             </div>
         </section>
 
@@ -186,17 +176,12 @@
                 <div class="p-6 border-2 border-black border-l-[12px] border-l-[#556b2f] bg-white">
                     <span class="tag-tactical">Instruction</span>
                     <h3 class="text-2xl font-bold uppercase mt-4 mb-3">Tactical Training</h3>
-                    <div class="h-44 bg-zinc-100 overflow-hidden border border-black">
-                        <img src="images/instruction.jpg" class="w-full h-full object-cover">
-                    </div>
+                    <div class="h-44 bg-zinc-100 overflow-hidden border border-black"><img src="images/instruction.jpg" class="w-full h-full object-cover"></div>
                 </div>
-
                 <div class="p-6 border-2 border-black border-l-[12px] border-l-black bg-white">
                     <span class="tag-tactical">Hardening</span>
                     <h3 class="text-2xl font-bold uppercase mt-4 mb-3">Operational Logistics</h3>
-                    <div class="h-44 bg-zinc-100 overflow-hidden border border-black">
-                        <img src="images/logistics.jpg" class="w-full h-full object-cover">
-                    </div>
+                    <div class="h-44 bg-zinc-100 overflow-hidden border border-black"><img src="images/logistics.jpg" class="w-full h-full object-cover"></div>
                 </div>
             </div>
         </section>
@@ -204,44 +189,25 @@
         <section id="intake" class="py-16 border-t-2 border-zinc-100 mt-12">
             <div class="bg-zinc-900 p-8 border-2 border-black text-white">
                 <h4 class="text-xl font-bold uppercase mb-2 text-[#C5A059]">Agent Intake Portal</h4>
-                <p class="text-sm opacity-70 mb-6 font-medium">Recruiting former LEO and retired Federal/State agents for high-tier operational blocks. Submit credentials via briefing portal below.</p>
+                <p class="text-sm opacity-70 mb-6 font-medium">Recruiting former LEO and retired Federal/State agents. Submit credentials via briefing portal below.</p>
                 <div class="text-[10px] font-black uppercase tracking-[0.3em] py-2 border-y border-white/20 text-[#00ff41]">Vetting Status: ACTIVE</div>
             </div>
         </section>
 
         <section id="briefing" class="py-20 border-t-[6px] border-black">
-            <div class="mb-12">
-                <h3 class="text-6xl font-bold uppercase tracking-tighter text-black">Briefing</h3>
-                <p class="text-[11px] font-bold tracking-[0.4em] text-zinc-500 mt-2 uppercase">Official Intake Directive</p>
-            </div>
-            
+            <h3 class="text-6xl font-bold uppercase tracking-tighter text-black">Briefing</h3>
             <form action="https://formspree.io/f/maqagqro" method="POST" class="space-y-8">
-                <div>
-                    <label>Full Identity / Rank</label>
-                    <input type="text" name="name" required placeholder="OFFICIAL NAME">
-                </div>
-                <div>
-                    <label>Official Email</label>
-                    <input type="email" name="email" required placeholder="CONTACT@AGENCY.GOV">
-                </div>
-                <div>
-                    <label>Operational Objective</label>
-                    <textarea name="message" rows="5" required placeholder="DESCRIBE THE REQUIREMENT..."></textarea>
-                </div>
-                <button type="submit" class="bg-black text-white p-6 font-bold uppercase tracking-[0.5em] text-xs w-full active:bg-[#C5A059] transition-all">
-                    Transmit Briefing Request
-                </button>
+                <div><label>Full Identity / Rank</label><input type="text" name="name" required placeholder="OFFICIAL NAME"></div>
+                <div><label>Official Email</label><input type="email" name="email" required placeholder="CONTACT@AGENCY.GOV"></div>
+                <div><label>Operational Objective</label><textarea name="message" rows="5" required placeholder="DESCRIBE THE REQUIREMENT..."></textarea></div>
+                <button type="submit" class="bg-black text-white p-6 font-bold uppercase tracking-[0.5em] text-xs w-full">Transmit Briefing Request</button>
             </form>
         </section>
-
     </main>
 
     <footer class="py-20 border-t-2 border-black bg-white text-center">
         <div class="font-bold uppercase text-xl mb-4">Mickey <span class="text-[#C5A059]">Max</span></div>
-        <p class="text-[9px] text-zinc-500 font-bold uppercase tracking-widest leading-loose">
-            &copy; 2026 Mickey Max Strategic Security Group. <br>
-            Definitive • Elite • Absolute
-        </p>
+        <p class="text-[9px] text-zinc-500 font-bold uppercase tracking-widest leading-loose">&copy; 2026 Mickey Max Strategic Security Group. <br> Definitive • Elite • Absolute</p>
     </footer>
 
 </body>
