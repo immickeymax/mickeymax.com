@@ -19,7 +19,7 @@
         }
         .nav-fixed { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 3px solid #000; }
         
-        /* FIXED FORM BOXES */
+        /* FORM VISIBILITY FIX */
         input, textarea {
             background-color: #f4f4f4 !important; 
             border: 2px solid #000 !important; 
@@ -46,10 +46,12 @@
 
         .typed-cursor { opacity: 0; } 
 
-        /* FIX: Prevents page jumping by giving the typing area a consistent height/space */
-        #sliding-words-container {
+        /* STABILITY FIX: Locked container height prevents page jumping */
+        .typing-lock-container {
             display: block;
-            min-height: 1.2em;
+            height: 1.2em; /* Locked height */
+            overflow: hidden;
+            line-height: 1.2;
         }
     </style>
 </head>
@@ -70,9 +72,9 @@
         <section class="pt-8">
             <h2 class="text-6xl md:text-8xl font-bold leading-[0.85] mb-8 uppercase tracking-tighter">
                 Strategic <br>
-                <span id="sliding-words-container" class="text-zinc-400">
+                <div class="typing-lock-container text-zinc-400">
                     <span id="sliding-words">Consultancy.</span>
-                </span>
+                </div>
             </h2>
             <div class="hero-frame">
                 <img src="images/hero.jpg" alt="Mickey Max Operational Detail">
