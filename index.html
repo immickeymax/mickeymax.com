@@ -9,8 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --paper: #ffffff; --ink: #000000; --gold: #C5A059; --olive: #556b2f;
-            --text-main: #1a1a1a; 
+            --paper: #ffffff; --ink: #000000; --gold: #C5A059; --olive: #556b2f; --text-main: #1a1a1a; 
         }
         body { 
             background-color: var(--paper); color: var(--text-main); 
@@ -19,7 +18,16 @@
         }
         .nav-fixed { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 3px solid #000; }
         
-        /* FORM VISIBILITY FIX */
+        /* THE FIX: Fixed Height & Wide Width ensures words like "Operational" don't cut off or jump */
+        .header-type-wrap {
+            display: block;
+            height: 1.2em; /* Keeps the line height stable */
+            width: 100%;   /* Allows long words to fit */
+            overflow: hidden;
+            line-height: 1;
+        }
+
+        /* Visible Form Inputs */
         input, textarea {
             background-color: #f4f4f4 !important; 
             border: 2px solid #000 !important; 
@@ -36,23 +44,13 @@
             font-size: 10px; font-weight: 700; text-transform: uppercase;
         }
 
-        .news-card { border-left: 4px solid var(--gold); padding: 1.25rem; background: #fafafa; margin-bottom: 1rem; }
+        .hero-frame { border: 4px solid #000; height: 320px; overflow: hidden; position: relative; }
+        .hero-frame img { width: 100%; height: 100%; object-fit: cover; }
         
         /* iPhone Safari Padding */
         footer { padding-bottom: calc(4rem + env(safe-area-inset-bottom)); }
         
-        .hero-frame { border: 4px solid #000; height: 320px; overflow: hidden; position: relative; }
-        .hero-frame img { width: 100%; height: 100%; object-fit: cover; }
-
         .typed-cursor { opacity: 0; } 
-
-        /* STABILITY FIX: Locked container height prevents page jumping */
-        .typing-lock-container {
-            display: block;
-            height: 1.2em; /* Locked height */
-            overflow: hidden;
-            line-height: 1.2;
-        }
     </style>
 </head>
 <body class="pt-24">
@@ -72,8 +70,8 @@
         <section class="pt-8">
             <h2 class="text-6xl md:text-8xl font-bold leading-[0.85] mb-8 uppercase tracking-tighter">
                 Strategic <br>
-                <div class="typing-lock-container text-zinc-400">
-                    <span id="sliding-words">Consultancy.</span>
+                <div class="header-type-wrap text-zinc-400">
+                    <span id="sliding-words"></span>
                 </div>
             </h2>
             <div class="hero-frame">
@@ -84,28 +82,7 @@
         <section class="py-10 border-b-2 border-zinc-100">
             <p class="text-[11px] font-black tracking-[0.3em] text-[#8a6d3b] uppercase mb-6">Operational Narrative</p>
             <div class="space-y-6 text-xl md:text-2xl font-light leading-relaxed text-zinc-900">
-                <p>
-                    Following the rigorous standards of Tier 1 defense firms like <span class="italic text-zinc-500">Triple Canopy</span> and the legacy of specialized private military firms, <span class="font-bold">Mickey Max</span> provides elite protection for federal, state, and municipal assets.
-                </p>
-                <p>
-                    Our mission profiles encompass high-threat convoy logistics, transportation of valuables, and law enforcement tactical training. We bridge the gap between municipal security and international contracting standards—ensuring zero-fail execution for both high-profile personnel and critical infrastructure.
-                </p>
-            </div>
-        </section>
-
-        <section class="py-12 bg-zinc-50 px-6 -mx-6 mb-10">
-            <div class="max-w-screen-md mx-auto">
-                <p class="text-[11px] font-black tracking-[0.3em] text-[#8a6d3b] uppercase mb-8">Contractor Intelligence & Recent Bids</p>
-                <div class="news-card">
-                    <span class="text-[9px] font-bold text-zinc-400 uppercase">Q2 2026 Procurement</span>
-                    <h4 class="font-bold uppercase text-sm mt-1">Multi-State Convoy Hardening Bid Awarded</h4>
-                    <p class="text-xs text-zinc-600 mt-2">DOD Supply Chain Division finalized a multi-year contract for tactical supply line protection across urban jurisdictions. Mickey Max remains Tier 1 compliant.</p>
-                </div>
-                <div class="news-card">
-                    <span class="text-[9px] font-bold text-zinc-400 uppercase">Law Enforcement Update</span>
-                    <h4 class="font-bold uppercase text-sm mt-1">Municipal Tactical Training Mandate</h4>
-                    <p class="text-xs text-zinc-600 mt-2">State law enforcement agencies transitioning toward private-sector instructional blocks for asymmetrical threat response.</p>
-                </div>
+                <p>Following the standards of Tier 1 defense firms like <span class="italic text-zinc-500">Triple Canopy</span>, <span class="font-bold">Mickey Max</span> provides elite protection for federal, state, and municipal assets.</p>
             </div>
         </section>
 
@@ -119,63 +96,25 @@
                         <img src="images/instruction.jpg" class="w-full h-full object-cover">
                     </div>
                 </div>
-                <div class="p-6 border-2 border-black border-l-[12px] border-l-black bg-white">
-                    <span class="tag-tactical" style="background: black;">Intelligence</span>
-                    <h3 class="text-2xl font-bold uppercase mt-4 mb-3">Operational Logistics</h3>
-                    <div class="h-40 bg-zinc-100 overflow-hidden border border-zinc-200">
-                        <img src="images/logistics.jpg" class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-12 border-t-2 border-zinc-100">
-            <p class="text-[11px] font-black tracking-[0.3em] text-[#8a6d3b] uppercase mb-8">02 // Field Ratings</p>
-            <div class="space-y-4">
-                <div class="p-6 border-2 border-black bg-zinc-50">
-                    <div class="text-[#C5A059] text-xl">★★★★★</div>
-                    <p class="italic text-sm mt-4 text-zinc-800">"The highest standard of convoy protection and instructional strategy available to local municipalities. Tactical precision from start to finish."</p>
-                    <p class="text-[9px] font-bold uppercase mt-4 text-zinc-400 tracking-widest">— Verified Operational Lead</p>
-                </div>
             </div>
         </section>
 
         <section id="briefing" class="py-20 border-t-[6px] border-black">
-            <div class="mb-12">
-                <h3 class="text-6xl font-bold uppercase tracking-tighter text-black">Briefing</h3>
-                <p class="text-[11px] font-bold tracking-[0.4em] text-zinc-500 mt-2 uppercase">Authorized Intake Directive</p>
-            </div>
-            
+            <h3 class="text-6xl font-bold uppercase tracking-tighter text-black">Briefing</h3>
             <form action="https://formspree.io/f/maqagqro" method="POST" class="space-y-8">
-                <div>
-                    <label>Full Identity / Rank</label>
-                    <input type="text" name="name" required placeholder="Name or Rank">
-                </div>
-                <div>
-                    <label>Organization</label>
-                    <input type="text" name="agency" placeholder="Agency or Company">
-                </div>
-                <div>
-                    <label>Official Email</label>
-                    <input type="email" name="email" required placeholder="Contact Email">
-                </div>
-                <div>
-                    <label>Operational Objective</label>
-                    <textarea name="message" rows="5" required placeholder="Describe the briefing requirement..."></textarea>
-                </div>
-                <button type="submit" class="bg-black text-white p-6 font-bold uppercase tracking-[0.5em] text-xs w-full active:bg-[#C5A059] transition-colors">
-                    Transmit Briefing Request
-                </button>
+                <div><label>Full Identity / Rank</label><input type="text" name="name" required placeholder="Name or Rank"></div>
+                <div><label>Official Email</label><input type="email" name="email" required placeholder="Contact Email"></div>
+                <div><label>Operational Objective</label><textarea name="message" rows="5" required placeholder="Describe the briefing requirement..."></textarea></div>
+                <button type="submit" class="bg-black text-white p-6 font-bold uppercase tracking-[0.5em] text-xs w-full active:bg-[#C5A059]">Transmit Briefing Request</button>
             </form>
         </section>
 
     </main>
 
     <footer class="py-20 border-t-2 border-black bg-white text-center">
-        <div class="font-bold uppercase text-xl mb-4 border-none">Mickey <span class="text-[#C5A059]">Max</span></div>
+        <div class="logo-bureau border-none mb-4 font-bold uppercase text-xl">Mickey <span class="text-[#C5A059]">Max</span></div>
         <p class="text-[9px] text-zinc-500 font-bold uppercase tracking-widest leading-loose">
-            &copy; 2026 Mickey Max Strategic Security Group. <br>
-            Tactical • Strategic • Operational
+            &copy; 2026 Mickey Max Strategic Security Group.
         </p>
     </footer>
 
