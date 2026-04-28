@@ -3,133 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MickeyMax | Strategy. Logistics. Security.</title>
+    <title>MickeyMax | The Art of Strategy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #080909; font-family: 'DM Sans', sans-serif; color: #e8e4dc; scroll-behavior: smooth; }
+        body { background-color: #050505; color: #e5e5e5; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
         .serif { font-family: 'Cormorant Garamond', serif; }
-        .gold-text { color: #d4a017; }
-        .gold-bg { background-color: #d4a017; }
+        .gold { color: #c4a77d; }
+        .gold-bg { background-color: #c4a77d; }
+        .border-gold { border-color: #c4a77d; }
+        
+        /* Nowness Typography Styles */
+        .nav-link { letter-spacing: 0.3em; font-size: 0.65rem; font-weight: 400; text-transform: uppercase; transition: color 0.3s; }
+        .nav-link:hover { color: #c4a77d; }
+        .hero-title { line-height: 0.9; letter-spacing: -0.02em; }
+        
+        /* Grid Interactivity */
+        .story-card { transition: opacity 0.4s ease; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 2rem; }
+        .story-card:hover { opacity: 0.7; }
+        
+        /* Form Styling */
         input, select, textarea { 
-            background: rgba(255,255,255,0.05) !important; 
-            border: 1px solid rgba(212, 160, 23, 0.2) !important;
-            color: white !important;
-            border-radius: 4px;
+            background: transparent !important; 
+            border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+            border-top: none !important; border-left: none !important; border-right: none !important;
+            border-radius: 0 !important; color: white !important; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
         }
-        input:focus { border-color: #d4a017 !important; outline: none; }
-        .card-glow:hover { box-shadow: 0 10px 40px rgba(212, 160, 23, 0.1); transform: translateY(-5px); transition: all 0.3s ease; }
-        #success-state { display: none; }
+        input:focus { border-bottom-color: #c4a77d !important; outline: none; }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <nav class="sticky top-0 z-50 bg-[#080909]/95 backdrop-blur-sm border-b border-white/10 px-6 py-4 flex justify-between items-center">
-        <h1 class="serif text-2xl gold-text tracking-widest uppercase">MickeyMax</h1>
-        <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest text-white/60">
-            <a href="#about" class="hover:text-[#d4a017]">About</a>
-            <a href="#services" class="hover:text-[#d4a017]">Services</a>
-            <a href="#appointment" class="hover:text-[#d4a017]">Schedule</a>
+    <nav class="px-8 py-10 flex flex-col items-center border-b border-white/5">
+        <h1 class="serif text-3xl tracking-[0.4em] mb-8 font-light italic">MICKEYMAX</h1>
+        <div class="flex space-x-12">
+            <a href="#instruction" class="nav-link">Instruction</a>
+            <a href="#logistics" class="nav-link">Logistics</a>
+            <a href="#strategy" class="nav-link">Strategy</a>
+            <a href="#book" class="nav-link gold">Book Now</a>
         </div>
-        <a href="#appointment" class="text-xs gold-text uppercase tracking-widest px-4 py-2 border border-[#d4a017]/30 rounded hover:bg-[#d4a017]/10">Book Now</a>
     </nav>
 
-    <section class="py-24 px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <p class="gold-text text-xs uppercase tracking-[0.4em] mb-4">Tactical Instruction. Logistics. Security.</p>
-            <h2 class="serif text-5xl md:text-7xl mb-8 leading-tight text-white">Strategy & Consulting for the Elite</h2>
-            <p class="text-white/60 text-lg mb-12 max-w-2xl mx-auto">Providing high-end private tactical instruction and complex logistics solutions with unparalleled precision.</p>
-            <a href="#appointment" class="gold-bg text-black px-12 py-5 font-bold rounded uppercase tracking-[0.2em] text-xs transition-transform hover:scale-105 inline-block">Confirm Appointment</a>
-        </div>
-    </section>
-
-    <section id="services" class="py-20 px-6 bg-white/[0.01] border-t border-white/5">
-        <div class="max-w-6xl mx-auto">
-            <h3 class="serif text-4xl text-center mb-16 text-white">Core Competencies</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-glow border border-white/10 bg-black/30 p-8 rounded-xl flex flex-col items-center text-center">
-                    <div class="w-16 h-16 gold-bg rounded-full flex items-center justify-center mb-6">
-                        <span class="text-3xl text-black font-boldserif">T</span>
-                    </div>
-                    <h4 class="serif text-2xl gold-text mb-4">Tactical Instruction</h4>
-                    <p class="text-white/60 flex-grow">Private, advanced instructional programs tailored for defense professionals, law enforcement, and private sector contractors.</p>
-                </div>
-                <div class="card-glow border border-white/10 bg-black/30 p-8 rounded-xl flex flex-col items-center text-center">
-                    <div class="w-16 h-16 gold-bg rounded-full flex items-center justify-center mb-6">
-                        <span class="text-3xl text-black font-boldserif">L</span>
-                    </div>
-                    <h4 class="serif text-2xl gold-text mb-4">Complex Logistics</h4>
-                    <p class="text-white/60 flex-grow">End-to-end solutions for challenging operational requirements, including international transport and strategic supply chain management.</p>
-                </div>
-                <div class="card-glow border border-white/10 bg-black/30 p-8 rounded-xl flex flex-col items-center text-center">
-                    <div class="w-16 h-16 gold-bg rounded-full flex items-center justify-center mb-6">
-                        <span class="text-3xl text-black font-boldserif">S</span>
-                    </div>
-                    <h4 class="serif text-2xl gold-text mb-4">Security Strategy</h4>
-                    <p class="text-white/60 flex-grow">Strategic risk assessment and consulting for executive protection, operational security, and private meeting planning.</p>
-                </div>
+    <main class="max-w-7xl mx-auto px-6 py-16">
+        <section class="mb-32">
+            <div class="relative w-full aspect-[16/7] bg-zinc-900 mb-8 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070')] bg-cover bg-center grayscale contrast-125"></div>
             </div>
-        </div>
-    </section>
+            <p class="nav-link gold mb-4">Series: The Unseen Discipline</p>
+            <h2 class="serif hero-title text-6xl md:text-8xl italic font-light max-w-4xl mb-8">
+                The Precision of Logistics. <br>The Art of Strategy.
+            </h2>
+            <div class="flex items-center space-x-4">
+                <span class="h-[1px] w-12 bg-white/20"></span>
+                <p class="serif italic text-xl opacity-60">Curated expertise for complex environments.</p>
+            </div>
+        </section>
 
-    <section id="appointment" class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-xl mx-auto border border-white/10 p-8 md:p-12 rounded-xl shadow-2xl relative">
-            <h3 class="serif text-4xl mb-12 text-center text-white">Booking Request</h3>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-32">
+            <div class="story-card" id="instruction">
+                <div class="aspect-square bg-zinc-900 mb-6 grayscale hover:grayscale-0 transition-all duration-700 bg-[url('https://images.unsplash.com/photo-1628556747901-5070a5520844?auto=format&fit=crop&q=80&w=1000')] bg-cover"></div>
+                <p class="nav-link mb-2 opacity-50">Instruction</p>
+                <h3 class="serif text-4xl italic mb-4">The Tactical Aesthetic: A Study in Movement</h3>
+                <p class="text-sm opacity-50 uppercase tracking-widest">Duration: Full-Day Immersion</p>
+            </div>
             
-            <div id="success-state" class="absolute inset-0 gold-bg flex flex-col items-center justify-center rounded-xl p-10 z-10 text-center text-black">
-                <div class="w-24 h-24 rounded-full flex items-center justify-center mb-6 border-4 border-black">
-                    <span class="text-7xl font-bold">&#x2713;</span>
-                </div>
-                <p class="serif text-4xl mb-4 font-bold">You're Confirmed</p>
-                <p class="text-black/80">Your request is in our system. A final verification will be sent to the email provided.</p>
+            <div class="story-card" id="logistics">
+                <div class="aspect-square bg-zinc-900 mb-6 grayscale hover:grayscale-0 transition-all duration-700 bg-[url('https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&q=80&w=1000')] bg-cover"></div>
+                <p class="nav-link mb-2 opacity-50">Logistics</p>
+                <h3 class="serif text-4xl italic mb-4">Route Intelligence & Complex Supply Chains</h3>
+                <p class="text-sm opacity-50 uppercase tracking-widest">Service: Strategic Block (2h)</p>
             </div>
+        </section>
 
-            <form action="https://formspree.io/f/maqagqro" method="POST" class="space-y-6">
+        <section id="book" class="max-w-2xl mx-auto py-20 border-t border-white/10">
+            <p class="nav-link text-center gold mb-12">Confirm Appointment</p>
+            <form action="https://formspree.io/f/maqagqro" method="POST" class="space-y-12">
                 <div class="flex flex-col">
-                    <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Full Name</label>
-                    <input type="text" name="name" required class="w-full p-4">
+                    <label class="nav-link opacity-40 mb-2">Your Name</label>
+                    <input type="text" name="name" required>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-2 gap-12">
                     <div class="flex flex-col">
-                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Date</label>
-                        <input type="date" name="date" required class="w-full p-4">
+                        <label class="nav-link opacity-40 mb-2">Preferred Date</label>
+                        <input type="date" name="date" required>
                     </div>
                     <div class="flex flex-col">
-                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Time</label>
-                        <input type="time" name="time" required class="w-full p-4">
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="flex flex-col">
-                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Service Type</label>
-                        <select name="service" class="w-full p-4 focus:ring-0">
-                            <option>Private Tactical Meeting</option>
-                            <option>Instructional Consultation</option>
-                            <option>Logistics Strategy Session</option>
-                            <option>Executive Security Review</option>
-                        </select>
-                    </div>
-                    <div class="flex flex-col">
-                        <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Duration</label>
-                        <select name="duration" class="w-full p-4 focus:ring-0">
-                            <option>Initial (30m - 1h)</option>
-                            <option>Strategic Block (2h)</option>
-                            <option>Full-Day Immersion</option>
-                        </select>
+                        <label class="nav-link opacity-40 mb-2">Time</label>
+                        <input type="time" name="time" required>
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <label class="text-[10px] uppercase tracking-widest text-white/40 mb-2">Reason for Appointment</label>
-                    <textarea name="reason" rows="4" required class="w-full p-4"></textarea>
+                    <label class="nav-link opacity-40 mb-2">The Objective</label>
+                    <textarea name="reason" rows="3" required></textarea>
                 </div>
-                <button type="submit" class="w-full gold-bg text-black py-5 font-bold uppercase tracking-[0.2em] text-xs rounded transition-transform hover:scale-[1.01]">Confirm Request</button>
+                <button type="submit" class="w-full border border-gold gold py-6 serif italic text-2xl hover:bg-gold hover:text-black transition-all">Submit Request</button>
             </form>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="py-12 border-t border-white/5 text-center">
-        <p class="text-[10px] uppercase tracking-[0.4em] text-white/20">&copy; 2026 MickeyMax. Established 2022. All Rights Reserved.</p>
-        <p class="text-xs text-white/40 mt-4">For immediate inquiries, contact <a href="mailto:schoppman@gmail.com" class="gold-text">schoppman@gmail.com</a>.</p>
+    <footer class="py-20 text-center border-t border-white/5 opacity-30">
+        <p class="nav-link mb-4">Established 2022 &copy; MickeyMax</p>
+        <p class="serif italic">Tactical. Logistics. Security.</p>
     </footer>
 
 </body>
