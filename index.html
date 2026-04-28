@@ -40,7 +40,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* PRO LIVE TICKER WIDGET */
+        /* LIVE API TICKER WIDGET */
         .ticker-widget {
             background: #f4f4f4;
             border-bottom: 1px solid #000;
@@ -53,7 +53,7 @@
         .ticker-track {
             display: flex;
             white-space: nowrap;
-            animation: move-ticker 90s linear infinite;
+            animation: move-ticker 120s linear infinite;
         }
 
         .ticker-item {
@@ -113,12 +113,10 @@
 
         <div class="ticker-widget">
             <div class="ticker-track" id="live-ticker">
-                <div class="ticker-item"><b>[INTEL]</b> SYNCHRONIZING WITH GLOBAL INTELLIGENCE FEEDS...</div>
-                <div class="ticker-item"><b>[AP NEWS]</b> MONITORING REGIONAL INSTABILITY AND MARITIME SECURITY UPDATES...</div>
-                <div class="ticker-item"><b>[REUTERS]</b> TRACKING CRITICAL INFRASTRUCTURE DEFENSE PROTOCOLS...</div>
-                <div class="ticker-item"><b>[INTEL]</b> SYNCHRONIZING WITH GLOBAL INTELLIGENCE FEEDS...</div>
-                <div class="ticker-item"><b>[AP NEWS]</b> MONITORING REGIONAL INSTABILITY AND MARITIME SECURITY UPDATES...</div>
-                <div class="ticker-item"><b>[REUTERS]</b> TRACKING CRITICAL INFRASTRUCTURE DEFENSE PROTOCOLS...</div>
+                <div class="ticker-item"><b>[INTEL]</b> SYNCHRONIZING SECURE GLOBAL NEWS NODES...</div>
+                <div class="ticker-item"><b>[SYSTEM]</b> AUTHENTICATING NEWSAPI CREDENTIALS...</div>
+                <div class="ticker-item"><b>[INTEL]</b> SYNCHRONIZING SECURE GLOBAL NEWS NODES...</div>
+                <div class="ticker-item"><b>[SYSTEM]</b> AUTHENTICATING NEWSAPI CREDENTIALS...</div>
             </div>
         </div>
 
@@ -244,34 +242,32 @@
     </footer>
 
     <script>
-        async function loadLiveIntel() {
+        const API_KEY = '744a144f6d0b4ea9ab2fe64b96edc943';
+        const QUERY = 'geopolitics security tactical intelligence "executive protection" military';
+
+        async function fetchLiveNews() {
             try {
-                // Using a CORS proxy to fetch the RSS feed safely
-                const rssUrl = 'https://news.google.com/rss/search?q=geopolitics+security+intelligence+AP+Reuters&hl=en-US&gl=US&ceid=US:en';
-                const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-                
-                const response = await fetch(apiUrl);
+                // Fetching world events specifically filtered for security and tactical keywords
+                const response = await fetch(`https://newsapi.org/v2/everything?q=${encodeURIComponent(QUERY)}&sortBy=publishedAt&language=en&pageSize=12&apiKey=${API_KEY}`);
                 const data = await response.json();
                 const ticker = document.getElementById('live-ticker');
                 
-                if (data.items && data.items.length > 0) {
+                if (data.status === "ok" && data.articles.length > 0) {
                     let html = '';
-                    data.items.slice(0, 12).forEach(item => {
-                        const title = item.title.split(' - ')[0].toUpperCase();
-                        const source = item.author || "WORLD NEWS";
+                    data.articles.forEach(article => {
+                        const title = article.title.toUpperCase();
+                        const source = article.source.name.toUpperCase();
                         html += `<div class="ticker-item"><b>[${source}]</b> ${title}</div>`;
                     });
                     // Double the items for seamless looping
                     ticker.innerHTML = html + html;
                 }
             } catch (err) {
-                console.error("Intel Feed Error:", err);
+                console.error("Live Intel Connection Error:", err);
             }
         }
-        loadLiveIntel();
+        fetchLiveNews();
     </script>
 
 </body>
 </html>
-
-
