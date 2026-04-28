@@ -40,27 +40,26 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* LIVE INTEL TICKER WIDGET */
-        .intel-ticker {
+        /* AP WORLD EVENTS TICKER WIDGET */
+        .ticker-widget {
             background: #f4f4f4;
             border-bottom: 1px solid #000;
             height: 28px;
             display: flex;
             align-items: center;
             overflow: hidden;
-            position: relative;
         }
         
-        .ticker-content {
+        .ticker-track {
             display: flex;
             white-space: nowrap;
-            animation: ticker-sweep 60s linear infinite;
+            animation: move-ticker 70s linear infinite;
         }
 
         .ticker-item {
             display: inline-flex;
             align-items: center;
-            padding: 0 40px;
+            padding: 0 50px;
             font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
@@ -69,16 +68,14 @@
         }
 
         .ticker-item b { color: #ff0000; margin-right: 8px; }
-        .ticker-item i { color: #888; margin-left: 8px; font-style: normal; }
 
-        @keyframes ticker-sweep {
+        @keyframes move-ticker {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } /* Halfway because we duplicate content for seamless loop */
+            100% { transform: translateX(-50%); } /* Halfway for seamless duplication loop */
         }
 
         .headline-main { line-height: 0.95; letter-spacing: -0.03em; }
 
-        /* FORM INPUTS */
         input, textarea {
             background-color: #f7f7f7 !important; border: 2px solid #000 !important; 
             border-radius: 0px !important; padding: 1rem !important;
@@ -113,16 +110,16 @@
             </div>
         </div>
 
-        <div class="intel-ticker">
-            <div class="ticker-content">
-                <div class="ticker-item"><b>[INTEL]</b> AP: HEIGHTENED SECURITY POSTURE AT GOVERNMENT INSTALLATIONS FOLLOWING REGIONAL INSTABILITY.</div>
-                <div class="ticker-item"><b>[ALERT]</b> REUTERS: MARITIME LOGISTICS UNDER REVIEW IN HIGH-RISK TRANSIT CORRIDORS.</div>
-                <div class="ticker-item"><b>[INTEL]</b> OSINT: MUNICIPALITIES MANDATING ADVANCED TACTICAL TRAINING FOR INFRASTRUCTURE DEFENSE.</div>
-                <div class="ticker-item"><b>[UPDATE]</b> MICKEY MAX: CONVOY HARDENING PROTOCOL (SOP-01) SUCCESSFULLY DEPLOYED.</div>
-                <div class="ticker-item"><b>[INTEL]</b> AP: HEIGHTENED SECURITY POSTURE AT GOVERNMENT INSTALLATIONS FOLLOWING REGIONAL INSTABILITY.</div>
-                <div class="ticker-item"><b>[ALERT]</b> REUTERS: MARITIME LOGISTICS UNDER REVIEW IN HIGH-RISK TRANSIT CORRIDORS.</div>
-                <div class="ticker-item"><b>[INTEL]</b> OSINT: MUNICIPALITIES MANDATING ADVANCED TACTICAL TRAINING FOR INFRASTRUCTURE DEFENSE.</div>
-                <div class="ticker-item"><b>[UPDATE]</b> MICKEY MAX: CONVOY HARDENING PROTOCOL (SOP-01) SUCCESSFULLY DEPLOYED.</div>
+        <div class="ticker-widget">
+            <div class="ticker-track">
+                <div class="ticker-item"><b>[WORLD NEWS]</b> AP: HEIGHTENED SECURITY POSTURE AT INTERNATIONAL DIPLOMATIC MISSIONS FOLLOWING REGIONAL ESCALATION.</div>
+                <div class="ticker-item"><b>[INTEL]</b> REUTERS: CRITICAL INFRASTRUCTURE DEFENSE PROTOCOLS REVIEWED IN MAJOR METROPOLITAN CORRIDORS.</div>
+                <div class="ticker-item"><b>[ALERT]</b> AP: EXECUTIVE PROTECTION DEMAND RISES AMID SHIFTING GLOBAL THREAT LANDSCAPES.</div>
+                <div class="ticker-item"><b>[LOGISTICS]</b> OSINT: MARITIME TRANSIT LOGISTICS RE-ROUTED TO SECURE MARITIME CHANNELS.</div>
+                <div class="ticker-item"><b>[WORLD NEWS]</b> AP: HEIGHTENED SECURITY POSTURE AT INTERNATIONAL DIPLOMATIC MISSIONS FOLLOWING REGIONAL ESCALATION.</div>
+                <div class="ticker-item"><b>[INTEL]</b> REUTERS: CRITICAL INFRASTRUCTURE DEFENSE PROTOCOLS REVIEWED IN MAJOR METROPOLITAN CORRIDORS.</div>
+                <div class="ticker-item"><b>[ALERT]</b> AP: EXECUTIVE PROTECTION DEMAND RISES AMID SHIFTING GLOBAL THREAT LANDSCAPES.</div>
+                <div class="ticker-item"><b>[LOGISTICS]</b> OSINT: MARITIME TRANSIT LOGISTICS RE-ROUTED TO SECURE MARITIME CHANNELS.</div>
             </div>
         </div>
 
