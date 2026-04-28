@@ -15,10 +15,70 @@
             font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
-        .nav-fixed { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 3px solid #000; }
+
+        /* FIXED HEADER ARCHITECTURE */
+        .header-stack {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .nav-fixed { 
+            background: rgba(255, 255, 255, 0.98); 
+            backdrop-filter: blur(20px); 
+            border-bottom: 3px solid #000;
+            height: 80px;
+        }
         
+        .status-bar {
+            background: #18181b;
+            color: #ffffff;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* LIVE INTEL TICKER WIDGET */
+        .intel-ticker {
+            background: #f4f4f4;
+            border-bottom: 1px solid #000;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .ticker-content {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker-sweep 60s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 40px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #333;
+        }
+
+        .ticker-item b { color: #ff0000; margin-right: 8px; }
+        .ticker-item i { color: #888; margin-left: 8px; font-style: normal; }
+
+        @keyframes ticker-sweep {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Halfway because we duplicate content for seamless loop */
+        }
+
         .headline-main { line-height: 0.95; letter-spacing: -0.03em; }
 
+        /* FORM INPUTS */
         input, textarea {
             background-color: #f7f7f7 !important; border: 2px solid #000 !important; 
             border-radius: 0px !important; padding: 1rem !important;
@@ -36,41 +96,55 @@
 
         .ledger-box { border: 1px solid #ddd; padding: 1.5rem; background: #fafafa; font-family: monospace; font-size: 12px; position: relative; overflow: hidden; }
         
-        /* Nav Link Hover */
         .nav-link { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.3s ease; }
         .nav-link:hover { color: var(--gold); }
     </style>
 </head>
-<body class="pt-32">
+<body class="pt-44">
 
-    <div class="fixed top-20 w-full bg-zinc-900 text-white py-2 z-40 overflow-hidden">
-        <div class="max-w-screen-md mx-auto px-6 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-                <div class="h-2 w-2 bg-[#00ff41] rounded-full animate-pulse"></div>
-                <span class="text-[9px] font-bold uppercase tracking-[0.2em]">Operational // S-CAL HQ READY</span>
+    <div class="header-stack">
+        <div class="status-bar">
+            <div class="max-w-screen-md mx-auto w-full px-6 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="h-2 w-2 bg-[#00ff41] rounded-full animate-pulse shadow-[0_0_8px_#00ff41]"></div>
+                    <span class="text-[9px] font-bold uppercase tracking-[0.2em]">Operational // S-CAL HQ READY</span>
+                </div>
+                <div class="text-[9px] font-bold uppercase tracking-[0.2em] opacity-50 hidden md:block">JURISDICTION: FED/STATE/MUNI</div>
             </div>
-            <div class="text-[9px] font-bold uppercase tracking-[0.2em] opacity-50">JURISDICTION: FED/STATE/MUNI</div>
         </div>
+
+        <div class="intel-ticker">
+            <div class="ticker-content">
+                <div class="ticker-item"><b>[INTEL]</b> AP: HEIGHTENED SECURITY POSTURE AT GOVERNMENT INSTALLATIONS FOLLOWING REGIONAL INSTABILITY.</div>
+                <div class="ticker-item"><b>[ALERT]</b> REUTERS: MARITIME LOGISTICS UNDER REVIEW IN HIGH-RISK TRANSIT CORRIDORS.</div>
+                <div class="ticker-item"><b>[INTEL]</b> OSINT: MUNICIPALITIES MANDATING ADVANCED TACTICAL TRAINING FOR INFRASTRUCTURE DEFENSE.</div>
+                <div class="ticker-item"><b>[UPDATE]</b> MICKEY MAX: CONVOY HARDENING PROTOCOL (SOP-01) SUCCESSFULLY DEPLOYED.</div>
+                <div class="ticker-item"><b>[INTEL]</b> AP: HEIGHTENED SECURITY POSTURE AT GOVERNMENT INSTALLATIONS FOLLOWING REGIONAL INSTABILITY.</div>
+                <div class="ticker-item"><b>[ALERT]</b> REUTERS: MARITIME LOGISTICS UNDER REVIEW IN HIGH-RISK TRANSIT CORRIDORS.</div>
+                <div class="ticker-item"><b>[INTEL]</b> OSINT: MUNICIPALITIES MANDATING ADVANCED TACTICAL TRAINING FOR INFRASTRUCTURE DEFENSE.</div>
+                <div class="ticker-item"><b>[UPDATE]</b> MICKEY MAX: CONVOY HARDENING PROTOCOL (SOP-01) SUCCESSFULLY DEPLOYED.</div>
+            </div>
+        </div>
+
+        <nav class="nav-fixed">
+            <div class="max-w-screen-md mx-auto px-6 h-full flex items-center justify-between">
+                <div class="font-bold uppercase text-xl border-l-4 border-black pl-3">Mickey <span class="text-[#C5A059]">Max</span></div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#intel" class="nav-link">Operations</a>
+                    <a href="#sop" class="nav-link">Protocols</a>
+                    <a href="#intake" class="nav-link">Agents</a>
+                    <a href="#briefing" class="bg-black text-white text-[10px] font-bold px-4 py-2 tracking-widest">Briefing</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <a href="#briefing" class="bg-black text-white text-[10px] font-bold px-4 py-2 uppercase tracking-tighter">Briefing</a>
+                </div>
+            </div>
+        </nav>
     </div>
 
-    <nav class="fixed top-0 w-full z-50 nav-fixed">
-        <div class="max-w-screen-md mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="font-bold uppercase text-xl border-l-4 border-black pl-3">Mickey <span class="text-[#C5A059]">Max</span></div>
-            
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#intel" class="nav-link">Operations</a>
-                <a href="#sop" class="nav-link">Protocols</a>
-                <a href="#intake" class="nav-link">Agents</a>
-                <a href="#briefing" class="bg-black text-white text-[10px] font-bold px-4 py-2 tracking-widest">Briefing</a>
-            </div>
-            
-            <div class="md:hidden">
-                <a href="#briefing" class="bg-black text-white text-[10px] font-bold px-4 py-2 uppercase">Briefing</a>
-            </div>
-        </div>
-    </nav>
-
-    <main class="max-w-screen-md mx-auto px-6 sm:px-8">
+    <main class="max-w-screen-md mx-auto px-6 sm:px-8 mt-12">
         
         <section class="pt-6 mb-12">
             <p class="text-[11px] font-black tracking-[0.4em] text-[#C5A059] uppercase mb-4">Strategic Security Group</p>
@@ -134,7 +208,7 @@
             <div class="bg-zinc-900 p-8 border-2 border-black text-white">
                 <h4 class="text-xl font-bold uppercase mb-2 text-[#C5A059]">Agent Intake Portal</h4>
                 <p class="text-sm opacity-70 mb-6 font-medium">Recruiting former LEO and retired Federal/State agents for high-tier operational blocks. Submit credentials via briefing portal below.</p>
-                <div class="text-[10px] font-black uppercase tracking-[0.3em] py-2 border-y border-white/20">Vetting Status: ACTIVE</div>
+                <div class="text-[10px] font-black uppercase tracking-[0.3em] py-2 border-y border-white/20 text-[#00ff41]">Vetting Status: ACTIVE</div>
             </div>
         </section>
 
