@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Mickey Max | Strategic Operations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --gold: #C5A059; --red: #ff0000; --green: #00ff41; 
+        }
+        body { 
+            background-color: #ffffff; color: #000; 
+            font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased;
+            margin: 0; padding: 0;
+        }
+
+        /* FIXED HEADER */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000; background: #fff;
+        }
+        .nav-main {
+            height: 60px; display: flex; align-items: center; justify-content: space-between;
+            padding: 0 5%; border-bottom: 1px solid #eee;
+        }
+        .status-bar {
+            background: #000; color: #fff; height: 32px; display: flex; align-items: center;
+            padding: 0 5%; font-size: 10px; font-weight: 700; letter-spacing: 1px;
+        }
+
+        /* LIVE TICKER */
+        .intel-ticker {
+            background: #f4f4f4; border-bottom: 1px solid #000; height: 26px;
+            display: flex; align-items: center; overflow: hidden;
+        }
+        .ticker-track { display: flex; white-space: nowrap; animation: move-ticker 120s linear infinite; }
+        .ticker-track:hover { animation-play-state: paused; }
+        .ticker-item { 
+            display: inline-flex; align-items: center; padding: 0 40px; 
+            font-size: 9px; font-weight: 800; text-transform: uppercase; color: #333; text-decoration: none;
+        }
+        .ticker-item b { color: var(--red); margin-right: 6px; border: 1px solid var(--red); padding: 0 3px; font-size: 7px; }
+
+        @keyframes move-ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* PULSE ANIMATION */
+        .pulse-dot {
+            height: 8px; width: 8px; background-color: var(--green); border-radius: 50%;
+            margin-right: 10px; display: inline-block;
+            box-shadow: 0 0 8px var(--green);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        /* MAIN CONTENT - NO GAP */
+        main { padding-top: 118px; max-width: 1100px; margin: 0 auto; padding-left: 5%; padding-right: 5%; }
+
+        .headline { 
+            font-size: clamp(3rem, 10vw, 6rem); font-weight: 800; line-height: 0.85; 
+            letter-spacing: -0.05em; margin: 20px 0; text-transform: uppercase;
+        }
+
+        .hero-box {
+            border: 4px solid #000; width: 100%; height: 450px; 
+            overflow: hidden; background: #eee; margin-bottom: 25px;
+        }
+        .hero-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* BENTO GRID */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 40px 0; }
+        .service-card { border: 2px solid #000; padding: 0; position: relative; display: flex; flex-direction: column; }
+        .card-img { height: 220px; background: #ddd; overflow: hidden; border-bottom: 2px solid #000; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; }
+        .card-body { padding: 20px; }
+        .card-tag { 
+            position: absolute; top: 15px; right: 15px; background: var(--red); color: #fff;
+            font-size: 9px; font-weight: 900; padding: 3px 10px; text-transform: uppercase;
+        }
+
+        /* FORM STYLING */
+        .briefing-section { border-top: 8px solid #000; padding: 60px 0; text-align: center; }
+        .form-container { max-width: 800px; margin: 0 auto; text-align: left; }
+        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px; }
+        
+        label { display: block; font-size: 10px; font-weight: 800; text-transform: uppercase; margin-bottom: 5px; color: #666; }
+        input, textarea { 
+            width: 100%; border: 1px solid #000; padding: 12px; font-family: inherit; 
+            font-size: 14px; border-radius: 0; background: #fff;
+        }
+        .btn-submit { 
+            background: #000; color: #fff; width: 100%; padding: 15px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 2px; margin-top: 20px; cursor: pointer;
+        }
+
+        /* MOBILE FIXES */
+        @media (max-width: 768px) {
+            .input-row { grid-template-columns: 1fr; }
+            .headline { font-size: 4rem; }
+            .hero-box { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-main">
+            <div class="flex items-center">
+                <div class="w-1 h-8 bg-black mr-3"></div>
+                <h1 class="text-2xl font-extrabold uppercase tracking-tighter">MICKEY <span class="text-[#C5A059]">MAX</span></h1>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-bold text-[11px] uppercase tracking-widest">
+                <a href="#ops">Operations</a>
+                <a href="#sop">Protocols</a>
+                <a href="#agents">Agents</a>
+                <a href="#briefing" class="bg-black text-white px-5 py-2">Briefing</a>
+            </div>
+        </div>
+        
+        <div class="status-bar">
+            <div class="pulse-dot"></div>
+            <span class="text-[#00ff41] mr-2">[OPERATIONAL]</span> Ready for deployment // Southern California HQ
+        </div>
+
+        <div class="intel-ticker">
+            <div class="ticker-track" id="live-ticker">
+                <div class="ticker-item"><b>[INTEL]</b> INITIALIZING LIVE GLOBAL INTEL FEED...</div>
+                <div class="ticker-item"><b>[INTEL]</b> INITIALIZING LIVE GLOBAL INTEL FEED...</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="pt-8">
+            <h2 class="headline">
+                OPERATIONAL <span class="text-zinc-400">EXCELLENCE.</span>
+            </h2>
+            <div class="hero-box">
+                <img src="https://images.unsplash.com/photo-1579389083046-e3df9c2b3325?auto=format&fit=crop&q=80&w=1600" alt="Operational View">
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
+                <p class="text-lg md:text-xl font-medium leading-relaxed">
+                    Following the rigorous standards of Tier 1 defense contracting firms, <span class="border-b-2 border-[#C5A059] font-bold">MICKEY MAX</span> provides high-level strategic protection, logistics hardening, and tactical instruction for federal, state, and local municipalities. Our expertise includes high-threat convoy security, executive protection for public figures and corporate assets, and specialized law enforcement training.
+                </p>
+                <p class="text-sm text-zinc-500 italic">
+                    (Note: All legacy industry models have been surpassed to establish original authority and unrivaled security standards.)
+                </p>
+                <p class="text-lg font-light text-zinc-700">
+                    We manage the secure transfer of high-value items, transportation logistics hardening, and rapid transfer protocols. Our focus on operational intelligence, OSINT monitoring, and proactive threat assessment ensures zero-fail mission execution.
+                </p>
+            </div>
+        </section>
+
+        <section id="ops" class="services-grid">
+            <div class="service-card">
+                <span class="card-tag">Instruction</span>
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1590402444681-9998393527ec?auto=format&fit=crop&q=80&w=800" alt="Training">
+                </div>
+                <div class="card-body">
+                    <h3 class="text-xl font-bold uppercase mb-2">Tactical Training</h3>
+                    <p class="text-xs text-zinc-600 leading-relaxed">Training advanced field scenarios and multi-environment operations. Better training for seasoned units and tier-one readiness.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <span class="card-tag">Intelligence</span>
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&q=80&w=800" alt="Logistics">
+                </div>
+                <div class="card-body">
+                    <h3 class="text-xl font-bold uppercase mb-2">Logistics Hardening</h3>
+                    <p class="text-xs text-zinc-600 leading-relaxed">Logistics hardening via high-end tactical equipment, senior-level monitoring, and proactive threat assessments.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="briefing" class="briefing-section">
+            <p class="text-[9px] font-black tracking-[0.4em] uppercase mb-1">Authorized Intake Directive</p>
+            <h3 class="text-6xl font-bold uppercase tracking-tighter mb-10">BRIEFING</h3>
+            
+            <div class="form-container">
+                <form action="https://formspree.io/f/maqagqro" method="POST">
+                    <div class="input-row">
+                        <div>
+                            <label>Full Identity/Rank</label>
+                            <input type="text" name="name" required placeholder="Organization">
+                        </div>
+                        <div>
+                            <label>Organization</label>
+                            <input type="text" name="org" placeholder="Official Email">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label>Official Email</label>
+                        <input type="email" name="email" required placeholder="contact@agency.gov">
+                    </div>
+                    <div>
+                        <label>Operational Objective</label>
+                        <textarea name="message" rows="5" required placeholder="Describe the requirement..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit Briefing</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white py-6 text-center text-[10px] uppercase tracking-[0.3em] opacity-50">
+        © 2026 | MICKEY MAX STRATEGIC | WEBSITE SECURITY FOOTER
+    </footer>
+
+    <script>
+        const API_KEY = '744a144f6d0b4ea9ab2fe64b96edc943';
+        const QUERY = 'geopolitics security tactical intelligence military';
+
+        async function fetchLiveNews() {
+            try {
+                const response = await fetch(`https://newsapi.org/v2/everything?q=${encodeURIComponent(QUERY)}&sortBy=publishedAt&language=en&pageSize=12&apiKey=${API_KEY}`);
+                const data = await response.json();
+                const ticker = document.getElementById('live-ticker');
+                if (data.status === "ok" && data.articles.length > 0) {
+                    let html = '';
+                    data.articles.forEach(article => {
+                        const title = article.title.toUpperCase();
+                        const source = article.source.name.toUpperCase();
+                        html += `<a href="${article.url}" target="_blank" class="ticker-item"><b>[${source}]</b> ${title}</a>`;
+                    });
+                    ticker.innerHTML = html + html;
+                }
+            } catch (err) { console.error("Intel Feed Error"); }
+        }
+        fetchLiveNews();
+    </script>
+
+</body>
+</html>
